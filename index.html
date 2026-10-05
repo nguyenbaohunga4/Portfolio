@@ -763,30 +763,16 @@
     <section id="books" class="py-16 sm:py-20 bg-ruina-dark border-b border-ruina-border">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-          <div class="max-w-xl">
-            <p class="font-cinzel text-xs font-semibold tracking-widest text-ruina-gold uppercase mb-1">
-              BOOK OF FEATS · SELECTED INQUIRIES & WORKS
-            </p>
-            <h2 class="font-cinzel text-2xl sm:text-3xl font-bold tracking-wide text-ruina-parchment">
-              The 4 Books of Feats
-            </h2>
-            <p class="text-xs sm:text-sm text-slate-400 mt-2 font-light">
-              Core research inquiries spanning Winmart warehouse slotting, audiobook consumer demand analytics, world freight chronicles, and coastal vessel fieldwork.
-            </p>
-          </div>
-
-          <div class="flex items-center gap-1.5 p-1 bg-ruina-surface border border-ruina-border rounded text-xs font-cinzel self-start md:self-auto">
-            <button onclick="filterBooks('all')" id="btn-tab-all" class="book-tab px-3 py-1.5 rounded bg-ruina-gold text-ruina-black font-bold transition-all">
-              All (4)
-            </button>
-            <button onclick="filterBooks('logistics')" id="btn-tab-logistics" class="book-tab px-3 py-1.5 rounded text-ruina-muted hover:text-ruina-gold transition-all">
-              Warehousing & Freight
-            </button>
-            <button onclick="filterBooks('research')" id="btn-tab-research" class="book-tab px-3 py-1.5 rounded text-ruina-muted hover:text-ruina-gold transition-all">
-              Surveys & Editorial
-            </button>
-          </div>
+        <div class="mb-12">
+          <p class="font-cinzel text-xs font-semibold tracking-widest text-ruina-gold uppercase mb-1">
+            BOOK OF FEATS · SELECTED INQUIRIES & WORKS
+          </p>
+          <h2 class="font-cinzel text-2xl sm:text-3xl font-bold tracking-wide text-ruina-parchment">
+            The 4 Books of Feats
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-400 mt-2 font-light max-w-2xl">
+            Core research inquiries spanning Winmart warehouse slotting, audiobook consumer demand analytics, world freight chronicles, and coastal vessel fieldwork.
+          </p>
         </div>
 
         <!-- 4 Primary Projects Grid (2x2 layout) -->
@@ -1027,14 +1013,14 @@
     <section id="floors" class="py-16 sm:py-20 bg-ruina-black border-b border-ruina-border">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div class="max-w-2xl mb-12">
+        <div class="mb-12">
           <p class="font-cinzel text-xs font-semibold tracking-widest text-ruina-gold uppercase mb-1">
-            BOOK OF MASTERY · DOMAIN CAPABILITIES
+            BOOK OF MASTERY
           </p>
           <h2 class="font-cinzel text-2xl sm:text-3xl font-bold tracking-wide text-ruina-parchment">
             Core Masteries & Analytical Apparatus
           </h2>
-          <p class="text-xs sm:text-sm text-slate-400 mt-2 font-light">
+          <p class="text-xs sm:text-sm text-slate-400 mt-2 font-light max-w-2xl">
             Technical proficiencies forged to ensure mathematical rigor in warehouse spatial management and end-to-end supply chain execution.
           </p>
         </div>
@@ -1208,13 +1194,9 @@
                 </div>
               </div>
 
-              <div class="p-3 bg-ruina-surface rounded border border-ruina-border/60 flex items-center justify-between text-ruina-muted text-[11px]">
+              <div class="p-3 bg-ruina-surface rounded border border-ruina-border/60 text-ruina-muted text-[11px] flex items-center gap-2">
+                <span class="text-ruina-gold">📍</span>
                 <span>Location: Hanoi, Vietnam</span>
-                <div class="flex items-center gap-3 font-cinzel text-ruina-gold">
-                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="hover:underline">GitHub</a>
-                  <span>·</span>
-                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="hover:underline">LinkedIn</a>
-                </div>
               </div>
 
             </div>
@@ -1318,7 +1300,7 @@
       <div class="flex items-center gap-2 text-ruina-parchment">
         <span class="w-2 h-2 bg-ruina-gold rotate-45 inline-block"></span>
         <span class="font-bold">LIBRARY OF THE ARCHIVED · NGUYEN BAO HUNG</span>
-        <span class="text-ruina-muted text-[11px]">GPA 3.69 · IELTS 8.0 · FTU K63</span>
+        <span class="text-ruina-muted text-[11px]">FTU K63</span>
       </div>
       <div class="text-[11px] text-ruina-muted text-center sm:text-right">
         "May you find your book in this place." &copy; 2026 Nguyen Bao Hung.
@@ -1421,11 +1403,8 @@
 
       <div id="modal-book-body" class="space-y-4 text-xs sm:text-sm text-slate-300 leading-relaxed font-light"></div>
 
-      <div class="pt-4 border-t border-ruina-border flex items-center justify-between">
+      <div class="pt-4 border-t border-ruina-border">
         <div id="modal-book-tags" class="flex flex-wrap gap-2 text-xs font-mono text-ruina-gold"></div>
-        <button onclick="closeBookModal()" class="px-4 py-2 font-cinzel text-xs font-semibold bg-ruina-dark hover:bg-ruina-border text-ruina-parchment border border-ruina-border rounded transition-colors">
-          DISMISS INSPECTION
-        </button>
       </div>
 
     </div>
