@@ -1,6 +1,6 @@
 {
-  "name": "Nguyễn Bảo Hưng - Portfolio",
-  "description": "Trang web portfolio cá nhân của Nguyễn Bảo Hưng - Sinh viên Logistics và Quản lý Chuỗi cung ứng tại Đại học Ngoại thương (FTU).",
+  "name": "Nguyen Bao Hung - Logistics Portfolio",
+  "description": "Personal portfolio of Nguyen Bao Hung - Logistics and Supply Chain Management student at Foreign Trade University (FTU). GPA 3.69/4.0, IELTS 8.0.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

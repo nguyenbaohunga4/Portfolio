@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang="vi" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nguyễn Bảo Hưng | Thư Viện Logistics - Library of Ruina Theme</title>
-  <meta name="description" content="Portfolio cá nhân phong cách Library of Ruina của Nguyễn Bảo Hưng - Thủ thư / Chuyên viên Logistics & Quản lý Chuỗi cung ứng, Đại học Ngoại thương." />
+  <title>Nguyen Bao Hung | Library of the Archived - Library of Ruina Theme</title>
+  <meta name="description" content="Personal portfolio of Nguyen Bao Hung - GPA 3.69/4.0, IELTS 8.0, Member of FTU Youth Leadership club - Academic committee, Logistics & Supply Chain Management." />
   
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Nguyễn Bảo Hưng | Thư Viện Logistics & Chuỗi Cung Ứng" />
-  <meta property="og:description" content="Khám phá các cuốn sách đúc kết kinh nghiệm kho vận, vận tải và dữ liệu của Nguyễn Bảo Hưng theo phong cách Library of Ruina." />
+  <meta property="og:title" content="Nguyen Bao Hung | Library of the Archived" />
+  <meta property="og:description" content="Explore the books of knowledge in warehousing, freight transport, and analytical logistics by Nguyen Bao Hung in Library of Ruina aesthetic." />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Google Fonts: Cinzel (Gothic / Ruina Serif) & Be Vietnam Pro (Vietnamese Typography) & JetBrains Mono -->
+  <!-- Google Fonts: Cinzel (Gothic / Ruina Monumental Serif), Be Vietnam Pro & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -49,8 +49,10 @@
     }
   </script>
 
+  <!-- YouTube IFrame Player API for Background Music -->
+  <script src="https://www.youtube.com/iframe_api"></script>
+
   <style>
-    /* Base Library of Ruina styling */
     body {
       background-color: #07080B;
       color: #D1D5DB;
@@ -60,7 +62,6 @@
       overflow-x: hidden;
     }
 
-    /* Ambient noise & gold filigree accents */
     .ruina-border-gold {
       border: 1px solid rgba(197, 160, 89, 0.35);
     }
@@ -69,28 +70,6 @@
       box-shadow: 0 0 15px rgba(197, 160, 89, 0.15);
     }
 
-    /* Ornate diamond corners for Library UI */
-    .ornate-box {
-      position: relative;
-    }
-    .ornate-box::before, .ornate-box::after {
-      content: '';
-      position: absolute;
-      width: 6px;
-      height: 6px;
-      border: 1px solid #C5A059;
-      transform: rotate(45deg);
-    }
-    .ornate-box::before {
-      top: -3px;
-      left: -3px;
-    }
-    .ornate-box::after {
-      bottom: -3px;
-      right: -3px;
-    }
-
-    /* Glow utilities */
     .gold-glow {
       text-shadow: 0 0 12px rgba(197, 160, 89, 0.4);
     }
@@ -98,7 +77,6 @@
       text-shadow: 0 0 12px rgba(155, 27, 43, 0.5);
     }
 
-    /* Custom scrollbar */
     ::-webkit-scrollbar {
       width: 6px;
     }
@@ -113,13 +91,12 @@
       background: #C5A059;
     }
 
-    /* Backdrop blur for modals */
     .ruina-modal-backdrop {
       background: rgba(5, 6, 9, 0.85);
       backdrop-filter: blur(8px);
     }
 
-    /* Library of Ruina: Tree of Light (Cây Thư Viện) animations */
+    /* Library of Ruina: Tree of Light animations */
     .tree-glow-animation {
       animation: treeGlowPulse 6s ease-in-out infinite;
     }
@@ -142,14 +119,6 @@
       100% { opacity: 0.6; transform: scaleX(1.15); }
     }
 
-    .node-pulse {
-      animation: nodePulseAnim 3s ease-in-out infinite alternate;
-    }
-    @keyframes nodePulseAnim {
-      0% { r: 12px; opacity: 0.8; }
-      100% { r: 15px; opacity: 1; filter: drop-shadow(0 0 8px #FFF8D6); }
-    }
-
     .floating-ember {
       animation: floatEmberUp 7s linear infinite;
     }
@@ -159,25 +128,50 @@
       80% { opacity: 0.6; }
       100% { transform: translateY(-320px) scale(1.1) rotate(45deg); opacity: 0; }
     }
+
+    /* Gramophone / Vinyl rotation & Equalizer */
+    @keyframes spinVinyl {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .vinyl-spinning {
+      animation: spinVinyl 8s linear infinite;
+    }
+    @keyframes eqBar1 { 0%, 100% { height: 4px; } 50% { height: 16px; } }
+    @keyframes eqBar2 { 0%, 100% { height: 14px; } 50% { height: 6px; } }
+    @keyframes eqBar3 { 0%, 100% { height: 8px; } 50% { height: 18px; } }
+    .eq-bar-1 { animation: eqBar1 0.8s ease-in-out infinite; }
+    /* Collapsible YouTube Video Drawer (Keeps video visually hidden while allowing continuous audio) */
+    #yt-player-drawer {
+      transition: max-height 0.35s ease, opacity 0.35s ease, margin 0.35s ease, padding 0.35s ease;
+      max-height: 280px;
+      opacity: 1;
+    }
+    #yt-player-drawer.hidden-drawer {
+      max-height: 0 !important;
+      opacity: 0 !important;
+      overflow: hidden !important;
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+      border-top-width: 0 !important;
+      pointer-events: none !important;
+    }
   </style>
-</head>
-<body class="selection:bg-ruina-crimson selection:text-ruina-parchment min-h-screen flex flex-col">
+<body class="selection:bg-ruina-crimson selection:text-ruina-parchment min-h-screen flex flex-col overflow-hidden">
 
   <!-- ========================================== -->
-  <!-- 0. ATMOSPHERIC INTRO: THE INVITATION -->
+  <!-- 0. THE INVITATION: PARCHMENT MANUSCRIPT (LoR) -->
   <!-- ========================================== -->
-  <section id="intro-screen" class="relative min-h-screen flex flex-col items-center justify-center px-4 py-12 z-50 bg-[#07080B] border-b border-ruina-border transition-opacity duration-700">
-    <!-- Library of Ruina: Glowing Tree of the Library (Tree of Light / Cây Thư Viện) -->
+  <section id="invitation-screen" class="fixed inset-0 z-50 overflow-y-auto flex items-center justify-center p-4 sm:p-6 bg-[#07080B] transition-all duration-700" role="dialog" aria-modal="true" aria-label="Library of Ruina Invitation">
+    
+    <!-- Glowing Tree of the Library Background -->
     <div class="absolute inset-0 pointer-events-none flex items-center justify-center overflow-hidden">
-      
-      <!-- Ambient Radial Aura & Celestial Light Column -->
-      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(197,160,89,0.18)_0%,_rgba(155,27,43,0.08)_35%,_transparent_70%)]"></div>
-      <div class="absolute w-32 sm:w-56 h-full bg-gradient-to-t from-transparent via-ruina-gold/15 to-transparent blur-2xl light-pillar"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(197,160,89,0.2)_0%,_rgba(155,27,43,0.1)_35%,_transparent_75%)]"></div>
+      <div class="absolute w-32 sm:w-56 h-full bg-gradient-to-t from-transparent via-ruina-gold/20 to-transparent blur-2xl light-pillar"></div>
 
-      <!-- Grand SVG: The Tree of the Library (Kabbalistic Tree of Light & Sefirot Floors) -->
+      <!-- Grand SVG: The Tree of the Library -->
       <svg class="w-[340px] sm:w-[620px] lg:w-[780px] h-[680px] sm:h-[860px] lg:h-[960px] max-w-none text-ruina-gold tree-glow-animation" viewBox="0 0 800 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <!-- Radiant Gold Linear Gradient for Trunk -->
           <linearGradient id="treeTrunkGrad" x1="400" y1="950" x2="400" y2="80" gradientUnits="userSpaceOnUse">
             <stop offset="0%" stop-color="#8F7034" stop-opacity="0.3" />
             <stop offset="25%" stop-color="#C5A059" stop-opacity="0.8" />
@@ -186,22 +180,19 @@
             <stop offset="100%" stop-color="#FFFFFF" stop-opacity="1" />
           </linearGradient>
 
-          <!-- Branch Gold Gradient -->
           <linearGradient id="branchGold" x1="0%" y1="100%" x2="100%" y2="0%">
             <stop offset="0%" stop-color="#8F7034" stop-opacity="0.4" />
             <stop offset="50%" stop-color="#E8CA82" stop-opacity="0.85" />
             <stop offset="100%" stop-color="#FFFDE8" stop-opacity="0.95" />
           </linearGradient>
 
-          <!-- Node Glow Radial Gradient -->
           <radialGradient id="nodeGlowGold" cx="50%" cy="50%" r="50%">
             <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1" />
             <stop offset="35%" stop-color="#FFF2B8" stop-opacity="0.9" />
             <stop offset="70%" stop-color="#C5A059" stop-opacity="0.4" />
-            <stop offset="100%" stop-color="#C5A059" stop-opacity="0" />
+            <stop offset="100%" stop-color="#C5A059" stop-opacity="0.8" />
           </radialGradient>
 
-          <!-- Tiphereth Core Radiant Cyan-Gold Gradient -->
           <radialGradient id="tipherethHeart" cx="50%" cy="50%" r="50%">
             <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1" />
             <stop offset="30%" stop-color="#FFEBB0" stop-opacity="0.95" />
@@ -210,293 +201,138 @@
           </radialGradient>
         </defs>
 
-        <!-- 1. SACRED PATHS OF THE LIBRARY FLOORS (Background Geometric Corridors) -->
+        <!-- Sacred Geometric Paths -->
         <g stroke="#C5A059" stroke-opacity="0.35" stroke-width="1.2">
-          <!-- Malkuth (400,880) to Yesod (400,740) -->
           <line x1="400" y1="880" x2="400" y2="740" />
-          <!-- Malkuth to Hod (270,640) & Netzach (530,640) -->
           <line x1="400" y1="880" x2="270" y2="640" />
           <line x1="400" y1="880" x2="530" y2="640" />
-          
-          <!-- Yesod (400,740) to Hod (270,640) & Netzach (530,640) & Tiphereth (400,500) -->
           <line x1="400" y1="740" x2="270" y2="640" />
           <line x1="400" y1="740" x2="530" y2="640" />
           <line x1="400" y1="740" x2="400" y2="500" />
-
-          <!-- Hod (270,640) to Netzach (530,640) -->
           <line x1="270" y1="640" x2="530" y2="640" />
-          <!-- Hod & Netzach to Tiphereth (400,500) -->
           <line x1="270" y1="640" x2="400" y2="500" />
           <line x1="530" y1="640" x2="400" y2="500" />
-
-          <!-- Hod to Gebura (250,380) | Netzach to Chesed (550,380) -->
           <line x1="270" y1="640" x2="250" y2="380" />
           <line x1="530" y1="640" x2="550" y2="380" />
-
-          <!-- Tiphereth (400,500) to Gebura (250,380) & Chesed (550,380) -->
           <line x1="400" y1="500" x2="250" y2="380" />
           <line x1="400" y1="500" x2="550" y2="380" />
-          <!-- Gebura to Chesed -->
           <line x1="250" y1="380" x2="550" y2="380" />
-
-          <!-- Gebura & Chesed to Binah (280,240) & Hokma (520,240) -->
           <line x1="250" y1="380" x2="280" y2="240" />
           <line x1="550" y1="380" x2="520" y2="240" />
-          <line x1="250" y1="380" x2="400" y2="240" stroke-dasharray="3 3" />
-          <line x1="550" y1="380" x2="400" y2="240" stroke-dasharray="3 3" />
-
-          <!-- Tiphereth to Kether (400,110) -->
           <line x1="400" y1="500" x2="400" y2="110" stroke-width="1.8" />
-          <!-- Binah & Hokma to Kether -->
           <line x1="280" y1="240" x2="520" y2="240" />
           <line x1="280" y1="240" x2="400" y2="110" />
           <line x1="520" y1="240" x2="400" y2="110" />
-          <!-- Kether upward infinite beam -->
           <line x1="400" y1="110" x2="400" y2="10" stroke="#FFF8D6" stroke-width="2.5" stroke-dasharray="4 2" />
         </g>
 
-        <!-- 2. ORGANIC LUMINOUS TREE TRUNK & CANOPY (The Tree of Light) -->
-        <!-- Deep Roots spreading at base -->
+        <!-- Organic Luminous Trunk & Canopy -->
         <g stroke="url(#treeTrunkGrad)" fill="none" stroke-linecap="round">
-          <!-- Root branches -->
           <path d="M400,920 Q360,950 310,980" stroke-width="3" opacity="0.6" />
           <path d="M400,920 Q440,950 490,980" stroke-width="3" opacity="0.6" />
           <path d="M400,900 Q320,930 250,960" stroke-width="2" opacity="0.4" />
           <path d="M400,900 Q480,930 550,960" stroke-width="2" opacity="0.4" />
 
-          <!-- Main Towering Trunk Lines (Multiple interwoven luminous sinews) -->
           <path d="M394,920 C388,810 380,680 392,520 C398,420 390,260 396,120" stroke-width="4.5" opacity="0.9" />
           <path d="M406,920 C412,810 420,680 408,520 C402,420 410,260 404,120" stroke-width="4.5" opacity="0.9" />
           <path d="M400,920 C398,750 402,600 400,500 C398,380 402,240 400,110" stroke-width="2.5" stroke="#FFFFFF" opacity="0.8" />
 
-          <!-- Spreading Luminous Branch Filaments wrapping around Floors -->
-          <!-- Lower branches to Hod & Netzach -->
           <path d="M395,730 C360,710 300,680 270,640" stroke-width="2.5" stroke="url(#branchGold)" />
           <path d="M405,730 C440,710 500,680 530,640" stroke-width="2.5" stroke="url(#branchGold)" />
-          <path d="M270,640 C230,620 190,630 150,650" stroke-width="1.5" stroke="url(#branchGold)" opacity="0.5" />
-          <path d="M530,640 C570,620 610,630 650,650" stroke-width="1.5" stroke="url(#branchGold)" opacity="0.5" />
-
-          <!-- Mid branches to Gebura & Chesed -->
           <path d="M395,500 C350,470 290,430 250,380" stroke-width="3" stroke="url(#branchGold)" />
           <path d="M405,500 C450,470 510,430 550,380" stroke-width="3" stroke="url(#branchGold)" />
-          <path d="M250,380 C200,350 160,370 120,400" stroke-width="1.5" stroke="url(#branchGold)" opacity="0.5" />
-          <path d="M550,380 C600,350 640,370 680,400" stroke-width="1.5" stroke="url(#branchGold)" opacity="0.5" />
-
-          <!-- Upper branches to Binah & Hokma -->
           <path d="M396,320 C360,290 310,270 280,240" stroke-width="2.5" stroke="url(#branchGold)" />
           <path d="M404,320 C440,290 490,270 520,240" stroke-width="2.5" stroke="url(#branchGold)" />
-          <path d="M280,240 C240,200 200,210 160,230" stroke-width="1.5" stroke="url(#branchGold)" opacity="0.6" />
-          <path d="M520,240 C560,200 600,210 640,230" stroke-width="1.5" stroke="url(#branchGold)" opacity="0.6" />
-
-          <!-- Crowning Canopy Arcs around Kether -->
           <path d="M395,140 C360,90 300,70 240,80" stroke-width="2" stroke="url(#branchGold)" opacity="0.7" />
           <path d="M405,140 C440,90 500,70 560,80" stroke-width="2" stroke="url(#branchGold)" opacity="0.7" />
-          <path d="M398,90 C380,50 340,30 290,35" stroke-width="1.5" stroke="url(#branchGold)" opacity="0.5" />
-          <path d="M402,90 C420,50 460,30 510,35" stroke-width="1.5" stroke="url(#branchGold)" opacity="0.5" />
         </g>
 
-        <!-- 3. SACRED SPHERES / THE 10 SEPHIRAH FLOORS OF THE LIBRARY -->
-        
-        <!-- Floor 10: Malkuth (400, 880) - History -->
-        <g transform="translate(400, 880)">
-          <circle r="26" fill="url(#nodeGlowGold)" opacity="0.4" />
-          <circle r="14" stroke="#C5A059" stroke-width="1.5" fill="#0D0F14" />
-          <circle r="7" fill="#C5A059" />
-          <rect x="-4" y="-4" width="8" height="8" fill="#FFF8D6" transform="rotate(45)" />
-        </g>
-
-        <!-- Floor 9: Yesod (400, 740) - Technological Sciences -->
-        <g transform="translate(400, 740)">
-          <circle r="28" fill="url(#nodeGlowGold)" opacity="0.5" />
-          <circle r="15" stroke="#C5A059" stroke-width="1.5" fill="#0D0F14" />
-          <circle r="8" fill="#C5A059" />
-          <circle r="3" fill="#FFFFFF" />
-        </g>
-
-        <!-- Floor 8: Hod (270, 640) - Literature -->
-        <g transform="translate(270, 640)">
-          <circle r="24" fill="url(#nodeGlowGold)" opacity="0.4" />
-          <circle r="13" stroke="#C5A059" stroke-width="1.5" fill="#0D0F14" />
-          <circle r="6" fill="#C5A059" />
-        </g>
-
-        <!-- Floor 7: Netzach (530, 640) - Art -->
-        <g transform="translate(530, 640)">
-          <circle r="24" fill="url(#nodeGlowGold)" opacity="0.4" />
-          <circle r="13" stroke="#C5A059" stroke-width="1.5" fill="#0D0F14" />
-          <circle r="6" fill="#C5A059" />
-        </g>
-
-        <!-- Floor 6: Tiphereth (400, 500) - Natural Sciences / The Central Heart of Light -->
-        <g transform="translate(400, 500)">
-          <circle r="50" fill="url(#tipherethHeart)" opacity="0.65" />
-          <circle r="30" stroke="#FFF8D6" stroke-width="0.8" stroke-dasharray="2 3" opacity="0.7" />
-          <circle r="20" stroke="#C5A059" stroke-width="2" fill="#0D0F14" />
-          <polygon points="0,-16 16,0 0,16 -16,0" stroke="#FFF8D6" stroke-width="1" fill="#C5A059" opacity="0.8" />
-          <circle r="8" fill="#FFFFFF" />
-        </g>
-
-        <!-- Floor 5: Gebura (250, 380) - Language / Red Mist -->
-        <g transform="translate(250, 380)">
-          <circle r="32" fill="url(#nodeGlowGold)" opacity="0.5" />
-          <circle r="16" stroke="#9B1B2B" stroke-width="2" fill="#0D0F14" />
-          <circle r="8" fill="#9B1B2B" />
-          <rect x="-4" y="-4" width="8" height="8" fill="#FFF8D6" transform="rotate(45)" />
-        </g>
-
-        <!-- Floor 4: Chesed (550, 380) - Social Sciences -->
-        <g transform="translate(550, 380)">
-          <circle r="32" fill="url(#nodeGlowGold)" opacity="0.5" />
-          <circle r="16" stroke="#C5A059" stroke-width="2" fill="#0D0F14" />
-          <circle r="8" fill="#C5A059" />
-          <circle r="3" fill="#FFFFFF" />
-        </g>
-
-        <!-- Floor 3: Binah (280, 240) - Philosophy -->
-        <g transform="translate(280, 240)">
-          <circle r="36" fill="url(#nodeGlowGold)" opacity="0.6" />
-          <circle r="18" stroke="#E8CA82" stroke-width="2" fill="#0D0F14" />
-          <circle r="9" fill="#C5A059" />
-          <circle r="4" fill="#FFFFFF" />
-        </g>
-
-        <!-- Floor 2: Hokma (520, 240) - Religion -->
-        <g transform="translate(520, 240)">
-          <circle r="36" fill="url(#nodeGlowGold)" opacity="0.6" />
-          <circle r="18" stroke="#E8CA82" stroke-width="2" fill="#0D0F14" />
-          <circle r="9" fill="#C5A059" />
-          <circle r="4" fill="#FFFFFF" />
-        </g>
-
-        <!-- Floor 1: Kether (400, 110) - The Crown / Floor of General Works -->
-        <g transform="translate(400, 110)">
-          <!-- Celestial Crown Radiance -->
-          <circle r="65" fill="url(#nodeGlowGold)" opacity="0.85" />
-          <circle r="42" stroke="#FFF8D6" stroke-width="1" stroke-dasharray="3 3" opacity="0.8" />
-          <circle r="28" stroke="#C5A059" stroke-width="2.5" fill="#0D0F14" />
-          <!-- Multi-pointed starburst at apex -->
-          <polygon points="0,-22 6,-6 22,0 6,6 0,22 -6,6 -22,0 -6,-6" fill="#FFF8D6" />
-          <circle r="8" fill="#FFFFFF" />
-        </g>
-
-        <!-- 4. ASCENDING CELESTIAL BEACON RAYS (Ascension of the Light) -->
-        <g stroke="#FFF8D6" stroke-linecap="round" opacity="0.7">
-          <line x1="400" y1="90" x2="400" y2="10" stroke-width="3" />
-          <line x1="390" y1="80" x2="360" y2="20" stroke-width="1.5" opacity="0.5" />
-          <line x1="410" y1="80" x2="440" y2="20" stroke-width="1.5" opacity="0.5" />
-        </g>
+        <!-- 10 Sephirah Nodes -->
+        <g transform="translate(400, 880)"><circle r="26" fill="url(#nodeGlowGold)" opacity="0.4" /><circle r="14" stroke="#C5A059" stroke-width="1.5" fill="#0D0F14" /><circle r="7" fill="#C5A059" /></g>
+        <g transform="translate(400, 740)"><circle r="28" fill="url(#nodeGlowGold)" opacity="0.5" /><circle r="15" stroke="#C5A059" stroke-width="1.5" fill="#0D0F14" /><circle r="8" fill="#C5A059" /></g>
+        <g transform="translate(270, 640)"><circle r="24" fill="url(#nodeGlowGold)" opacity="0.4" /><circle r="13" stroke="#C5A059" stroke-width="1.5" fill="#0D0F14" /><circle r="6" fill="#C5A059" /></g>
+        <g transform="translate(530, 640)"><circle r="24" fill="url(#nodeGlowGold)" opacity="0.4" /><circle r="13" stroke="#C5A059" stroke-width="1.5" fill="#0D0F14" /><circle r="6" fill="#C5A059" /></g>
+        <g transform="translate(400, 500)"><circle r="50" fill="url(#tipherethHeart)" opacity="0.65" /><circle r="20" stroke="#C5A059" stroke-width="2" fill="#0D0F14" /><circle r="8" fill="#FFFFFF" /></g>
+        <g transform="translate(250, 380)"><circle r="32" fill="url(#nodeGlowGold)" opacity="0.5" /><circle r="16" stroke="#9B1B2B" stroke-width="2" fill="#0D0F14" /><circle r="8" fill="#9B1B2B" /></g>
+        <g transform="translate(550, 380)"><circle r="32" fill="url(#nodeGlowGold)" opacity="0.5" /><circle r="16" stroke="#C5A059" stroke-width="2" fill="#0D0F14" /><circle r="8" fill="#C5A059" /></g>
+        <g transform="translate(280, 240)"><circle r="36" fill="url(#nodeGlowGold)" opacity="0.6" /><circle r="18" stroke="#E8CA82" stroke-width="2" fill="#0D0F14" /><circle r="9" fill="#C5A059" /></g>
+        <g transform="translate(520, 240)"><circle r="36" fill="url(#nodeGlowGold)" opacity="0.6" /><circle r="18" stroke="#E8CA82" stroke-width="2" fill="#0D0F14" /><circle r="9" fill="#C5A059" /></g>
+        <g transform="translate(400, 110)"><circle r="65" fill="url(#nodeGlowGold)" opacity="0.85" /><circle r="28" stroke="#C5A059" stroke-width="2.5" fill="#0D0F14" /><polygon points="0,-22 6,-6 22,0 6,6 0,22 -6,6 0,22 -6,6 -22,0 -6,-6" fill="#FFF8D6" /><circle r="8" fill="#FFFFFF" /></g>
+        <line x1="400" y1="90" x2="400" y2="10" stroke="#FFF8D6" stroke-width="3" stroke-linecap="round" opacity="0.8" />
       </svg>
 
-      <!-- 5. FLOATING GLOWING PARTICLES / DISPERSED BOOK PAGES (Floating embers rising into the light) -->
+      <!-- Floating Embers -->
       <div class="absolute inset-0 pointer-events-none overflow-hidden">
-        <!-- Floating Ember 1 -->
         <div class="absolute bottom-[20%] left-[45%] w-2 h-2 rounded-full bg-ruina-goldLight shadow-[0_0_8px_#FFF8D6] floating-ember" style="animation-delay: 0s;"></div>
-        <!-- Floating Ember 2 -->
         <div class="absolute bottom-[35%] left-[53%] w-2.5 h-2.5 rotate-45 border border-ruina-gold bg-ruina-goldLight shadow-[0_0_10px_#C5A059] floating-ember" style="animation-delay: 1.8s; animation-duration: 8.5s;"></div>
-        <!-- Floating Ember 3 -->
         <div class="absolute bottom-[15%] left-[38%] w-1.5 h-1.5 rounded-full bg-ruina-gold shadow-[0_0_6px_#C5A059] floating-ember" style="animation-delay: 3.2s; animation-duration: 6.5s;"></div>
-        <!-- Floating Ember 4 -->
         <div class="absolute bottom-[25%] left-[62%] w-2 h-2 rotate-12 border border-ruina-parchment bg-ruina-gold shadow-[0_0_8px_#FFF8D6] floating-ember" style="animation-delay: 4.5s; animation-duration: 9s;"></div>
-        <!-- Floating Ember 5 -->
         <div class="absolute bottom-[10%] left-[48%] w-3 h-3 rotate-45 border border-ruina-gold/80 bg-ruina-goldLight/70 shadow-[0_0_12px_#FFF8D6] floating-ember" style="animation-delay: 2.1s; animation-duration: 7.2s;"></div>
       </div>
-
     </div>
 
-    <!-- Intro Header & Sigil -->
-    <div class="relative max-w-2xl w-full text-center space-y-6">
+    <!-- The Invitation Parchment Sheet (Library of Ruina Theme) -->
+    <div class="relative max-w-xl w-full my-auto transition-transform duration-500">
       
-      <!-- Library Monogram & Emblem -->
-      <div class="inline-flex items-center justify-center p-3 rounded-full border border-ruina-gold/40 bg-ruina-surface shadow-[0_0_20px_rgba(197,160,89,0.2)]">
-        <svg class="w-10 h-10 text-ruina-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
-          <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"></path>
-          <path d="M6 2v20"></path>
-          <path d="M12 6h5"></path>
-          <path d="M12 10h5"></path>
-          <path d="M12 14h3"></path>
-          <circle cx="16" cy="18" r="1.5" fill="#C5A059"></circle>
-        </svg>
-      </div>
-
-      <!-- Roman Title -->
-      <div class="space-y-1">
-        <p class="font-cinzel tracking-[0.3em] text-xs sm:text-sm text-ruina-gold uppercase">
-          LIBRARY OF RUINA · THE CITY
-        </p>
-        <h1 class="font-cinzel text-3xl sm:text-5xl font-bold tracking-wider text-ruina-parchment gold-glow">
-          THƯ VIỆN LOGISTICS
-        </h1>
-        <p class="font-cinzel text-xs text-ruina-muted tracking-widest pt-1">
-          NGUYỄN BẢO HƯNG · PATRON LIBRARIAN
-        </p>
-      </div>
-
-      <!-- The Invitation Letter Container (Ruina Styled Parchment Invitation) -->
-      <div class="relative bg-ruina-surface/90 border border-ruina-gold/40 rounded-xl p-6 sm:p-8 text-left space-y-5 shadow-2xl backdrop-blur-md">
+      <!-- Ornate Antique Parchment Container -->
+      <div class="relative bg-gradient-to-b from-[#141823] via-[#0E1118] to-[#080A0E] border-2 border-ruina-gold/90 rounded-2xl p-6 sm:p-9 shadow-[0_0_70px_rgba(197,160,89,0.35)] backdrop-blur-xl space-y-6">
         
-        <!-- Ornate Header of Invitation -->
-        <div class="flex items-center justify-between border-b border-ruina-border pb-3">
-          <div class="flex items-center gap-2">
-            <span class="w-2.5 h-2.5 bg-ruina-crimson rotate-45 inline-block"></span>
-            <span class="font-cinzel text-xs tracking-widest text-ruina-gold font-semibold uppercase">
-              THE INVITATION · THƯ MỜI CHÍNH THỨC
+        <!-- Corner Filigrees / Ornaments -->
+        <span class="absolute top-2.5 left-3 text-ruina-gold font-cinzel text-xs pointer-events-none select-none">✦</span>
+        <span class="absolute top-2.5 right-3 text-ruina-gold font-cinzel text-xs pointer-events-none select-none">✦</span>
+        <span class="absolute bottom-2.5 left-3 text-ruina-gold font-cinzel text-xs pointer-events-none select-none">✦</span>
+        <span class="absolute bottom-2.5 right-3 text-ruina-gold font-cinzel text-xs pointer-events-none select-none">✦</span>
+
+        <!-- Close Button (Visible when revisited from main screen) -->
+        <button id="btn-close-invitation" onclick="closeInvitationParchment()" class="hidden absolute top-4 right-4 text-ruina-muted hover:text-ruina-gold p-1 text-xs font-cinzel border border-ruina-border rounded bg-ruina-dark/80 transition-colors" aria-label="Close Invitation">
+          ✕ RETURN
+        </button>
+
+        <!-- Header: Centered Alignment (The Invitation / Library of Logistics / Invitation No. 2412150133) -->
+        <div class="text-center border-b border-ruina-border/80 pb-4 space-y-1.5">
+          <div class="flex items-center justify-center gap-2">
+            <span class="w-1.5 h-1.5 bg-ruina-gold rotate-45 inline-block"></span>
+            <span class="font-cinzel text-xs sm:text-sm tracking-[0.25em] text-ruina-gold font-bold uppercase">
+              THE INVITATION
             </span>
+            <span class="w-1.5 h-1.5 bg-ruina-gold rotate-45 inline-block"></span>
           </div>
-          <span class="font-mono text-[11px] text-ruina-muted">INVITATION #FTU-2412150133</span>
+          <h1 class="font-cinzel text-2xl sm:text-3xl font-bold text-ruina-parchment tracking-wide gold-glow">
+            LIBRARY OF THE ARCHIVED
+          </h1>
+          <p class="font-mono text-xs sm:text-sm text-ruina-muted tracking-wider">
+            INVITATION NO. 2412150133
+          </p>
         </div>
 
-        <!-- Atmospheric Quote -->
-        <blockquote class="italic text-sm sm:text-base text-ruina-parchment border-l-2 border-ruina-gold pl-4 py-1 leading-relaxed">
-          "Nguyện cho người tìm thấy cuốn sách của riêng mình tại nơi đây."
-          <span class="block text-xs font-cinzel not-italic text-ruina-gold/80 mt-1 tracking-wider">
-            — May you find your book in this place.
-          </span>
+        <!-- The Directive Quote (Quote only) -->
+        <blockquote class="text-center italic text-sm sm:text-base text-ruina-parchment py-2.5 px-4 leading-relaxed bg-ruina-dark/50 border-y border-ruina-gold/30 rounded">
+          "May you find your book in this place."
         </blockquote>
 
-        <!-- Invitation Body Prose -->
-        <div class="space-y-2.5 text-xs sm:text-sm text-slate-300 leading-relaxed font-light">
+        <!-- Concise Invitation Body (Detailed credentials preserved on main screen) -->
+        <div class="space-y-2 text-xs sm:text-sm text-slate-300 leading-relaxed font-light text-center py-1">
           <p>
-            Gửi vị khách quý, người vừa bước chân qua ngưỡng cửa của Thư viện Tri thức.
+            To the <strong class="text-ruina-gold font-semibold">Distinguished Guest</strong>,
           </p>
-          <p>
-            Tại các tầng thư viện này, tôi — <strong class="text-ruina-gold font-semibold">Nguyễn Bảo Hưng</strong>, sinh viên Logistics & Quản lý Chuỗi cung ứng Đại học Ngoại thương (FTU) — đã đúc kết các cuộc hành trình thực địa, các nghiên cứu bố trí kho vận, và kỹ năng phân tích thành những <span class="text-ruina-gold font-medium">Cuốn Sách Tri Thức</span>.
-          </p>
-          <p class="text-slate-400 text-xs">
-            Nếu bạn đang tìm kiếm giải pháp tối ưu kho bãi, luân chuyển kệ hàng hoặc một cộng sự có trách nhiệm, hãy mở cánh cổng tiếp đón.
+          <p class="text-slate-300">
+            Patron Librarian <strong class="text-ruina-gold font-semibold">Nguyen Bao Hung</strong> invites you to step across the threshold and explore the <span class="text-ruina-goldLight font-medium">Books of Knowledge</span>.
           </p>
         </div>
 
-        <!-- Footer of Letter: Sigil & Acceptance Button -->
-        <div class="pt-3 border-t border-ruina-border flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div class="flex items-center gap-3">
-            <div class="w-8 h-8 rounded-full border border-ruina-crimson flex items-center justify-center text-ruina-crimson text-xs font-cinzel font-bold">
-              K63
-            </div>
-            <div class="text-[11px] text-ruina-muted leading-tight">
-              <div>Thủ thư phụ trách: Nguyễn Bảo Hưng</div>
-              <div class="text-ruina-gold">Chuyên ngành Kho vận & Chuỗi cung ứng</div>
-            </div>
-          </div>
-
-          <!-- Enter Library CTA Button -->
-          <div class="flex items-center gap-2 w-full sm:w-auto">
-            <button onclick="toggleAtmosphericAudio()" id="audio-toggle-btn" class="px-3 py-2 text-xs font-cinzel border border-ruina-border text-ruina-muted hover:text-ruina-gold hover:border-ruina-gold rounded transition-colors flex items-center gap-1.5" title="Bật/Tắt âm thanh môi trường thư viện">
-              <span id="audio-icon">♫</span>
-              <span id="audio-label">Âm thanh</span>
-            </button>
-            <a href="#patron-librarian" onclick="enterTheLibrary(event)" class="w-full sm:w-auto px-6 py-2.5 bg-gradient-to-r from-ruina-crimson to-ruina-crimsonDark hover:from-ruina-crimsonLight hover:to-ruina-crimson text-ruina-parchment font-cinzel text-xs font-bold tracking-widest uppercase rounded border border-ruina-gold/50 shadow-[0_0_15px_rgba(155,27,43,0.5)] transition-all flex items-center justify-center gap-2 group">
-              <span>Mở Thư Mời · Vào Thư Viện</span>
-              <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
-            </a>
-          </div>
+        <!-- Action Button -->
+        <div class="pt-3 border-t border-ruina-border/80">
+          <button 
+            id="btn-accept-invitation" 
+            onclick="acceptInvitationAndEnter()" 
+            class="w-full py-4 px-6 bg-gradient-to-r from-ruina-crimson via-ruina-crimsonLight to-ruina-crimson hover:from-ruina-crimsonLight hover:to-ruina-crimson text-ruina-parchment font-cinzel text-xs sm:text-sm font-bold tracking-widest uppercase rounded-lg border-2 border-ruina-gold shadow-[0_0_25px_rgba(186,38,57,0.7)] hover:shadow-[0_0_35px_rgba(197,160,89,0.8)] transition-all flex items-center justify-center gap-3 cursor-pointer group hover:scale-[1.01]"
+          >
+            <span>✦ SIGN & ACCEPT INVITATION ✦</span>
+            <span class="group-hover:translate-x-1.5 transition-transform">&rarr;</span>
+          </button>
         </div>
 
       </div>
-
-      <!-- Quick skip indicator -->
-      <a href="#patron-librarian" class="inline-block text-xs font-cinzel text-ruina-muted hover:text-ruina-gold transition-colors tracking-widest pt-2">
-        ▼ CUỘN XUỐNG ĐỂ TIẾP ĐÓN TRỰC TIẾP
-      </a>
 
     </div>
   </section>
@@ -505,38 +341,29 @@
   <!-- 1. TOP BAR / MAIN NAVIGATION CONTRACT -->
   <!-- ========================================== -->
   <header class="sticky top-0 z-40 bg-ruina-black/95 backdrop-blur-md border-b border-ruina-border">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
       
-      <!-- Zone 1: Wordmark Brand -->
-      <a href="#patron-librarian" class="flex items-center gap-3 group">
-        <span class="w-8 h-8 rounded bg-ruina-surface border border-ruina-gold/50 text-ruina-gold flex items-center justify-center font-cinzel text-sm font-bold shadow-[0_0_10px_rgba(197,160,89,0.2)] group-hover:border-ruina-gold transition-colors">
-          BH
+      <!-- Patron Librarian Name (Clean single-line presentation) -->
+      <a href="#patron-librarian" class="flex items-center shrink-0 group">
+        <span class="font-cinzel text-base sm:text-lg font-bold tracking-[0.16em] text-ruina-parchment group-hover:text-ruina-gold transition-colors whitespace-nowrap">
+          NGUYEN BAO HUNG
         </span>
-        <div class="flex flex-col">
-          <span class="font-cinzel text-sm sm:text-base font-bold text-ruina-parchment tracking-wider group-hover:text-ruina-gold transition-colors">
-            NGUYỄN BẢO HƯNG
-          </span>
-          <span class="font-mono text-[10px] text-ruina-gold/80 tracking-normal -mt-0.5">
-            Librarian of Logistics · FTU K63
-          </span>
-        </div>
       </a>
 
-      <!-- Zone 2: Navigation Links -->
+      <!-- Main Desktop Navigation -->
       <nav class="hidden md:flex items-center gap-7 font-cinzel text-xs tracking-wider text-slate-300">
-        <a href="#about" class="hover:text-ruina-gold transition-colors py-1">Hồ sơ Thủ thư</a>
-        <a href="#books" class="hover:text-ruina-gold transition-colors py-1">Sách Tri thức</a>
-        <a href="#floors" class="hover:text-ruina-gold transition-colors py-1">Tầng Kỹ năng</a>
-        <a href="#reception" class="hover:text-ruina-gold transition-colors py-1">Tiếp đón & Liên hệ</a>
+        <a href="#about" class="hover:text-ruina-gold transition-colors py-1 whitespace-nowrap">Introduction</a>
+        <a href="#experience" class="hover:text-ruina-gold transition-colors py-1 whitespace-nowrap">Book of Experience</a>
+        <a href="#books" class="hover:text-ruina-gold transition-colors py-1 whitespace-nowrap">Book of Feats</a>
+        <a href="#floors" class="hover:text-ruina-gold transition-colors py-1 whitespace-nowrap">Book of Mastery</a>
       </nav>
 
-      <!-- Zone 3: Primary Action & Mobile Menu Toggle -->
+      <!-- Action Button -->
       <div class="flex items-center gap-3">
-        <a href="#reception" class="hidden sm:inline-flex items-center justify-center px-4 py-2 font-cinzel text-xs font-bold tracking-widest text-ruina-parchment bg-ruina-surface border border-ruina-gold/60 hover:bg-ruina-gold/20 hover:border-ruina-gold rounded transition-all">
-          GỬI THƯ MỜI
+        <a href="#reception" class="inline-flex items-center justify-center px-4 py-2 font-cinzel text-xs font-bold tracking-widest text-ruina-parchment bg-ruina-surface border border-ruina-gold/60 hover:bg-ruina-gold/20 hover:border-ruina-gold rounded transition-all whitespace-nowrap">
+          SEND DISPATCH
         </a>
 
-        <!-- Mobile Menu Toggle Button -->
         <button id="mobile-toggle" type="button" class="md:hidden p-2 rounded text-ruina-gold hover:bg-ruina-surface border border-ruina-border" aria-label="Menu">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -548,10 +375,11 @@
 
     <!-- Mobile Dropdown -->
     <div id="mobile-menu" class="hidden md:hidden border-t border-ruina-border bg-ruina-dark px-4 py-3 space-y-2">
-      <a href="#about" class="block px-3 py-2 text-xs font-cinzel tracking-wider text-ruina-parchment hover:bg-ruina-surface rounded mobile-link">Hồ sơ Thủ thư</a>
-      <a href="#books" class="block px-3 py-2 text-xs font-cinzel tracking-wider text-ruina-parchment hover:bg-ruina-surface rounded mobile-link">Sách Tri thức (Dự án)</a>
-      <a href="#floors" class="block px-3 py-2 text-xs font-cinzel tracking-wider text-ruina-parchment hover:bg-ruina-surface rounded mobile-link">Tầng Kỹ năng</a>
-      <a href="#reception" class="block px-3 py-2 text-xs font-cinzel tracking-wider text-ruina-parchment hover:bg-ruina-surface rounded mobile-link">Tiếp đón & Liên hệ</a>
+      <a href="#about" class="block px-3 py-2 text-xs font-cinzel tracking-wider text-ruina-parchment hover:bg-ruina-surface rounded mobile-link">Introduction</a>
+      <a href="#experience" class="block px-3 py-2 text-xs font-cinzel tracking-wider text-ruina-parchment hover:bg-ruina-surface rounded mobile-link">Book of Experience</a>
+      <a href="#books" class="block px-3 py-2 text-xs font-cinzel tracking-wider text-ruina-parchment hover:bg-ruina-surface rounded mobile-link">Book of Feats</a>
+      <a href="#floors" class="block px-3 py-2 text-xs font-cinzel tracking-wider text-ruina-parchment hover:bg-ruina-surface rounded mobile-link">Book of Mastery</a>
+      <a href="#reception" class="block px-3 py-2 text-xs font-cinzel tracking-wider text-ruina-gold hover:bg-ruina-surface rounded mobile-link">Send Dispatch</a>
     </div>
   </header>
 
@@ -561,135 +389,133 @@
     <!-- 2. HERO / PATRON LIBRARIAN SECTION -->
     <!-- ========================================== -->
     <section id="patron-librarian" class="relative py-16 sm:py-24 border-b border-ruina-border overflow-hidden">
-      <!-- Dark texture backdrop -->
       <div class="absolute inset-0 bg-[radial-gradient(#181c26_1px,transparent_1px)] [background-size:28px_28px] opacity-40 pointer-events-none"></div>
 
-      <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
           
-          <!-- Left: Hero Text & Designation (7 cols) -->
-          <div class="lg:col-span-7 space-y-6">
+          <!-- Left: Hero Text & Designation (6 cols) -->
+          <div class="lg:col-span-6 space-y-6">
             
-            <!-- Metadata kicker -->
             <div class="flex items-center gap-2 text-xs font-mono text-ruina-gold tracking-widest">
               <span>FLOOR OF LOGISTICS</span>
               <span aria-hidden="true">/</span>
               <span>PATRON LIBRARIAN</span>
               <span aria-hidden="true">/</span>
-              <span class="text-ruina-muted">K63 FTU</span>
+              <span class="text-ruina-muted">FTU K63</span>
             </div>
 
             <div class="space-y-2">
-              <p class="font-cinzel text-xs tracking-widest text-ruina-gold uppercase">Thủ thư Phụ trách Khối Vận hành Kho</p>
+              <p class="font-cinzel text-xs tracking-widest text-ruina-gold uppercase">Patron Librarian of Logistics & Supply Chain Management</p>
               <h2 class="font-cinzel text-3xl sm:text-4xl lg:text-5xl font-bold tracking-wide text-ruina-parchment gold-glow text-balance">
-                NGUYỄN BẢO HƯNG
+                NGUYEN BAO HUNG
               </h2>
             </div>
 
-            <!-- Role & Vision in City style -->
             <p class="text-sm sm:text-base text-slate-300 leading-relaxed text-balance font-light">
-              Sinh viên chuyên ngành <strong class="text-ruina-gold font-medium">Logistics và Quản lý Chuỗi cung ứng</strong> tại Trường Đại học Ngoại thương (FTU). 
-              Mục tiêu hướng tới vị trí <strong class="text-ruina-parchment font-semibold">Giám sát & Quản lý Kho vận (Warehouse Supervisor)</strong>, chuẩn hóa dòng chảy hàng hóa và tổ chức không gian lưu trữ với tư duy kỷ luật, chính xác.
+              Logistics and Supply Chain Management scholar at Foreign Trade University (FTU). 
+              Targeting the role of <strong class="text-ruina-parchment font-semibold">Warehouse Operations Supervisor / Manager</strong>, dedicated to standardizing material flow, rack slotting optimization, and analytical inventory control with rigorous precision.
             </p>
 
-            <!-- Combat Attributes / Core Virtues (Ruina Stat Frame) -->
+
+            <!-- Traits / Virtues -->
             <div class="p-4 rounded-lg bg-ruina-surface border border-ruina-border space-y-3">
-              <div class="flex items-center justify-between text-xs font-cinzel text-ruina-gold border-b border-ruina-border pb-2">
-                <span>PHẨM CHẤT THỦ THƯ (CORE PASSIVES)</span>
-                <span class="font-mono text-ruina-muted text-[11px]">AFFINITY: WAREHOUSE</span>
+              <div class="text-xs font-cinzel text-ruina-gold border-b border-ruina-border pb-2 tracking-wider">
+                <span>PATRON LIBRARIAN TRAITS</span>
               </div>
               <div class="grid grid-cols-3 gap-2 text-center text-xs">
-                <div class="p-2.5 rounded bg-ruina-dark border border-ruina-border/80">
-                  <div class="font-cinzel font-bold text-ruina-gold">TRÁCH NHIỆM</div>
-                  <div class="text-[10px] text-ruina-muted mt-0.5">Độ chính xác tồn kho</div>
+                <div class="p-2.5 rounded bg-ruina-dark border border-ruina-border/80 flex items-center justify-center">
+                  <div class="font-cinzel font-bold text-ruina-gold tracking-wide">ACCOUNTABILITY</div>
                 </div>
-                <div class="p-2.5 rounded bg-ruina-dark border border-ruina-border/80">
-                  <div class="font-cinzel font-bold text-ruina-gold">CHĂM CHỈ</div>
-                  <div class="text-[10px] text-ruina-muted mt-0.5">Thực tế hiện trường</div>
+                <div class="p-2.5 rounded bg-ruina-dark border border-ruina-border/80 flex items-center justify-center">
+                  <div class="font-cinzel font-bold text-ruina-gold tracking-wide">DILIGENCE</div>
                 </div>
-                <div class="p-2.5 rounded bg-ruina-dark border border-ruina-border/80">
-                  <div class="font-cinzel font-bold text-ruina-gold">LINH HOẠT</div>
-                  <div class="text-[10px] text-ruina-muted mt-0.5">Ứng biến chuỗi cung ứng</div>
+                <div class="p-2.5 rounded bg-ruina-dark border border-ruina-border/80 flex items-center justify-center">
+                  <div class="font-cinzel font-bold text-ruina-gold tracking-wide">ADAPTABILITY</div>
                 </div>
               </div>
             </div>
 
-            <!-- Primary CTAs -->
-            <div class="flex flex-wrap items-center gap-3 pt-2">
-              <a href="#books" class="px-5 py-2.5 bg-ruina-gold hover:bg-ruina-goldLight text-ruina-black font-cinzel text-xs font-bold tracking-wider rounded transition-all shadow-[0_0_15px_rgba(197,160,89,0.3)] flex items-center gap-2">
-                <span>TRA CỨU SÁCH TRI THỨC</span>
-                <span>&darr;</span>
-              </a>
-              <a href="#reception" class="px-5 py-2.5 bg-ruina-surface hover:bg-ruina-card border border-ruina-gold/50 text-ruina-parchment font-cinzel text-xs font-semibold tracking-wider rounded transition-colors">
-                GỬI PHIẾU TIẾP ĐÓN
-              </a>
-              <button onclick="copyEmail()" id="hero-copy-email" class="px-3 py-2 text-xs font-mono text-ruina-muted hover:text-ruina-gold transition-colors flex items-center gap-1.5 border border-transparent">
+            <!-- Contact / Email quick copy -->
+            <div class="pt-1">
+              <button onclick="copyEmail()" id="hero-copy-email" class="px-3 py-2 text-xs font-mono text-ruina-muted hover:text-ruina-gold transition-colors flex items-center gap-1.5 border border-ruina-border/60 rounded bg-ruina-surface/50">
                 <span>k63.2412150133@ftu.edu.vn</span>
-                <span class="text-[10px] bg-ruina-border px-1.5 py-0.5 rounded text-ruina-parchment" id="copy-status">Sao chép</span>
+                <span class="text-[10px] bg-ruina-border px-1.5 py-0.5 rounded text-ruina-parchment" id="copy-status">Copy</span>
               </button>
             </div>
 
           </div>
 
-          <!-- Right: Key Page Card / Character Dossier (5 cols) -->
-          <div class="lg:col-span-5">
-            <div class="relative bg-ruina-surface border-2 border-ruina-gold/40 rounded-xl p-6 space-y-5 shadow-2xl">
+          <!-- Right: Key Page Card / Character Dossier (6 cols) -->
+          <div class="lg:col-span-6">
+            <div class="relative bg-ruina-surface border-2 border-ruina-gold/40 rounded-xl p-6 sm:p-7 space-y-5 shadow-2xl">
               
-              <!-- Card Header / Tier Badge -->
-              <div class="flex items-center justify-between border-b border-ruina-border pb-3">
-                <div class="flex items-center gap-2">
-                  <span class="w-3 h-3 bg-ruina-gold rotate-45 inline-block"></span>
-                  <span class="font-cinzel text-xs tracking-widest text-ruina-gold font-bold">KEY PAGE: LIBRARIAN NBH</span>
-                </div>
-                <span class="font-mono text-xs text-ruina-crimson font-bold">RANK: GRADE 1 SPECIALIST</span>
-              </div>
+              <!-- Profile Portrait Frame & Academic Info -->
+              <div class="flex items-center gap-5 sm:gap-6">
+                <!-- Patron Portrait Frame with Ruina Filigrees -->
+                <div class="shrink-0">
+                  <div class="w-28 h-38 sm:w-36 sm:h-48 rounded-lg bg-ruina-dark border-2 border-ruina-gold shadow-[0_0_24px_rgba(197,160,89,0.35)] overflow-hidden relative flex items-center justify-center">
+                    
+                    <!-- Portrait Image (Real Photograph) -->
+                    <img 
+                      id="patron-portrait-img" 
+                      src="/avatar.jpg" 
+                      alt="Nguyen Bao Hung" 
+                      class="w-full h-full object-cover object-top"
+                      referrerpolicy="no-referrer"
+                      onerror="this.onerror=null; this.src='https://i.postimg.cc/L8J9VPBj/portfolio.jpg';"
+                    />
 
-              <!-- Profile Monogram & Academic Stats -->
-              <div class="flex items-center gap-4">
-                <div class="w-16 h-16 rounded-lg bg-ruina-dark border border-ruina-gold flex items-center justify-center font-cinzel text-2xl font-bold text-ruina-gold shadow-[0_0_15px_rgba(197,160,89,0.25)] shrink-0">
-                  BH
+                    <!-- Corner filigree accents -->
+                    <span class="absolute top-1 left-1.5 text-[9px] text-ruina-gold pointer-events-none select-none">✦</span>
+                    <span class="absolute top-1 right-1.5 text-[9px] text-ruina-gold pointer-events-none select-none">✦</span>
+                    <span class="absolute bottom-1 left-1.5 text-[9px] text-ruina-gold pointer-events-none select-none">✦</span>
+                    <span class="absolute bottom-1 right-1.5 text-[9px] text-ruina-gold pointer-events-none select-none">✦</span>
+                  </div>
                 </div>
-                <div>
-                  <h3 class="font-cinzel text-lg font-bold text-ruina-parchment">Nguyễn Bảo Hưng</h3>
-                  <p class="font-mono text-xs text-ruina-muted mt-0.5">DOB: 19/07/2006 · Hà Nội</p>
-                  <p class="text-xs text-ruina-gold font-medium mt-0.5">Đại học Ngoại thương (FTU)</p>
+
+                <div class="space-y-1.5 min-w-0 flex-1">
+                  <h3 class="font-cinzel text-lg sm:text-2xl font-bold text-ruina-parchment leading-tight whitespace-nowrap">Nguyen Bao Hung</h3>
+                  <p class="font-mono text-xs text-ruina-muted">DOB: July 19, 2006</p>
+                  <p class="text-xs sm:text-sm text-ruina-gold font-medium">Foreign Trade University (FTU)</p>
+                  <p class="font-mono text-xs text-ruina-muted pt-1">Logistics & Supply Chain Management</p>
                 </div>
               </div>
 
               <!-- Battle-Style Parameters / Academic Dossier -->
               <div class="space-y-2.5 text-xs font-mono border-t border-b border-ruina-border py-3">
                 <div class="flex justify-between items-center text-slate-300">
-                  <span class="text-ruina-muted">CHUYÊN NGÀNH:</span>
-                  <span class="text-ruina-parchment font-medium">Logistics & SCM</span>
+                  <span class="text-ruina-muted">CUMULATIVE GPA:</span>
+                  <span class="text-ruina-gold font-bold">3.69 / 4.0</span>
                 </div>
                 <div class="flex justify-between items-center text-slate-300">
-                  <span class="text-ruina-muted">ĐỊNH HƯỚNG:</span>
-                  <span class="text-ruina-gold font-medium">Giám sát & Quản lý Kho</span>
+                  <span class="text-ruina-muted">ENGLISH PROFICIENCY:</span>
+                  <span class="text-ruina-goldLight font-bold">IELTS 8.0</span>
                 </div>
                 <div class="flex justify-between items-center text-slate-300">
-                  <span class="text-ruina-muted">TRƯỜNG ĐÀO TẠO:</span>
-                  <span class="text-ruina-parchment">Đại học Ngoại thương</span>
+                  <span class="text-ruina-muted">MAJOR:</span>
+                  <span class="text-ruina-parchment font-medium text-right">Logistics & Supply Chain Management</span>
                 </div>
                 <div class="flex justify-between items-center text-slate-300">
-                  <span class="text-ruina-muted">TRẠNG THÁI TIẾP ĐÓN:</span>
-                  <span class="text-emerald-400 font-semibold flex items-center gap-1.5">
-                    <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse"></span>
-                    Sẵn sàng tiếp nhận cơ hội
-                  </span>
+                  <span class="text-ruina-muted">CAREER TRAJECTORY:</span>
+                  <span class="text-ruina-crimsonLight font-semibold">Warehouse Supervisor</span>
+                </div>
+                <div class="text-left text-ruina-parchment pt-0.5 text-xs">
+                  Member of FTU Youth Leadership club - Academic committee
                 </div>
               </div>
 
               <!-- Core Specialty Cards -->
               <div class="space-y-2">
-                <div class="text-[11px] font-cinzel tracking-wider text-ruina-gold uppercase">Lĩnh vực tinh thông (Mastered Arts)</div>
+                <div class="text-[11px] font-cinzel tracking-wider text-ruina-gold uppercase">Primary Specialties</div>
                 <div class="grid grid-cols-2 gap-2 text-xs">
                   <div class="p-2 rounded bg-ruina-dark border border-ruina-border text-slate-300">
-                    <div class="text-ruina-parchment font-semibold">Bố trí Kệ hàng</div>
-                    <div class="text-[10px] text-ruina-muted">Slotting & FIFO/5S</div>
+                    <div class="text-ruina-parchment font-semibold">Shelf & Slotting</div>
+                    <div class="text-[10px] text-ruina-muted">Slotting, FIFO & 5S</div>
                   </div>
                   <div class="p-2 rounded bg-ruina-dark border border-ruina-border text-slate-300">
-                    <div class="text-ruina-parchment font-semibold">Phân tích Số liệu</div>
-                    <div class="text-[10px] text-ruina-muted">Excel Solver & Colab</div>
+                    <div class="text-ruina-parchment font-semibold">Research & Analytics</div>
+                    <div class="text-[10px] text-ruina-muted">Critical Theory & Excel</div>
                   </div>
                 </div>
               </div>
@@ -708,9 +534,9 @@
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div class="max-w-2xl mb-12">
-          <p class="font-cinzel text-xs font-semibold tracking-widest text-ruina-gold uppercase mb-1">HỒ SƠ THỦ THƯ · ABOUT THE LIBRARIAN</p>
+          <p class="font-cinzel text-xs font-semibold tracking-widest text-ruina-gold uppercase mb-1">INTRODUCTION · ABOUT THE LIBRARIAN</p>
           <h2 class="font-cinzel text-2xl sm:text-3xl font-bold tracking-wide text-ruina-parchment">
-            Giao thoa giữa Kinh tế Chuỗi cung ứng và Kỷ luật Hiện trường
+            Synthesizing Supply Chain Economics, Critical Inquiry & Ground Discipline
           </h2>
         </div>
 
@@ -719,38 +545,37 @@
           <!-- Narrative (7 cols) -->
           <div class="lg:col-span-7 space-y-5 text-sm sm:text-base text-slate-300 leading-relaxed font-light">
             <p>
-              Xuất thân là sinh viên chuyên ngành <strong class="text-ruina-gold font-medium">Logistics và Quản lý Chuỗi cung ứng</strong> tại Đại học Ngoại thương (FTU) — cái nôi đào tạo tư duy kinh tế và thương mại hàng đầu, tôi rèn luyện cho mình tầm nhìn bao quát về dòng chảy thương phẩm toàn cầu cũng như chi tiết hóa từng mắt xích vận chuyển nội địa.
+              As a scholar in <strong class="text-ruina-gold font-medium">Logistics and Supply Chain Management</strong> at Foreign Trade University (FTU) with distinguished academic standing (<strong class="text-ruina-gold font-semibold">GPA 3.69/4.0</strong> and <strong class="text-ruina-gold font-semibold">IELTS 8.0</strong>), I have cultivated a holistic grasp of global trade networks alongside the linguistic fluency required to assimilate advanced international operational standards.
             </p>
             <p>
-              Giống như quy luật vận hành của Thư viện Ruina: <em class="text-ruina-parchment">mọi cuốn sách đều cần được đặt đúng tầng, đúng kệ để phát huy sức mạnh tối đa</em>, trong công tác kho vận, việc <strong class="text-ruina-gold font-medium">tối ưu hóa vị trí kệ hàng (Slotting)</strong> và chuẩn hóa luồng gom hàng (picking route) là yếu tố sống còn giúp cắt giảm lãng phí thời gian và chi phí.
+              Concurrently, as a <strong class="text-ruina-parchment font-semibold">member of FTU Youth Leadership club - Academic committee</strong>, I lead academic research frameworks, draft analytical briefs, and hone dialectical critical thinking — an intellectual rigor that proves indispensable when deconstructing complex supply chain bottlenecks.
             </p>
             <p>
-              Tôi kiên định với mục tiêu trở thành <strong class="text-ruina-parchment font-semibold">Giám sát & Quản lý Kho vận (Warehouse Operations Supervisor)</strong>. Bằng tinh thần trách nhiệm tuyệt đối, sự chăm chỉ không ngại việc thực địa từ bến bãi đến kệ siêu thị, và năng lực thích ứng linh hoạt trước biến số chuỗi cung ứng, tôi sẵn sàng giải quyết những bài toán hóc búa nhất.
+              My professional focus is steadfast: ascending to the position of <strong class="text-ruina-parchment font-semibold">Warehouse Operations Supervisor / Manager</strong>. I am deeply dedicated to storage layout engineering, rack slotting optimization, and inventory control protocols that curtail picking transit times and eliminate waste.
             </p>
 
-            <!-- 3 Pillars framed in Ruina style -->
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-3">
               <div class="p-4 rounded bg-ruina-surface border border-ruina-border space-y-1">
-                <span class="font-cinzel text-xs text-ruina-gold font-bold">I. TRÁCH NHIỆM</span>
-                <h4 class="text-xs font-semibold text-ruina-parchment">Minh bạch & Tồn kho</h4>
+                <span class="font-cinzel text-xs text-ruina-gold font-bold">I. ACCOUNTABILITY</span>
+                <h4 class="text-xs font-semibold text-ruina-parchment">Data Integrity & Stock</h4>
                 <p class="text-[11px] text-ruina-muted leading-relaxed">
-                  Đảm bảo tính chính xác tuyệt đối trong kiểm kê SKU, hạn dùng và tuân thủ quy tắc an toàn kho bãi.
+                  Ensuring absolute precision in SKU cycle counts, expiration tracking, and strict adherence to safety mandates.
                 </p>
               </div>
 
               <div class="p-4 rounded bg-ruina-surface border border-ruina-border space-y-1">
-                <span class="font-cinzel text-xs text-ruina-gold font-bold">II. CHĂM CHỈ</span>
-                <h4 class="text-xs font-semibold text-ruina-parchment">Đào sâu Thực tế</h4>
+                <span class="font-cinzel text-xs text-ruina-gold font-bold">II. DILIGENCE</span>
+                <h4 class="text-xs font-semibold text-ruina-parchment">Ground Truth Discovery</h4>
                 <p class="text-[11px] text-ruina-muted leading-relaxed">
-                  Trực tiếp dấn thân vào các môi trường kho thực tế, cảng biển và phương tiện vận chuyển để nắm bắt vấn đề.
+                  Proactively immersing myself into physical operations — from ports and vessels to retail shelves — to discern core workflows.
                 </p>
               </div>
 
               <div class="p-4 rounded bg-ruina-surface border border-ruina-border space-y-1">
-                <span class="font-cinzel text-xs text-ruina-gold font-bold">III. LINH HOẠT</span>
-                <h4 class="text-xs font-semibold text-ruina-parchment">Thích ứng Biến số</h4>
+                <span class="font-cinzel text-xs text-ruina-gold font-bold">III. ADAPTABILITY</span>
+                <h4 class="text-xs font-semibold text-ruina-parchment">Variance Resolution</h4>
                 <p class="text-[11px] text-ruina-muted leading-relaxed">
-                  Chủ động đề xuất phương án thay thế khi xảy ra gián đoạn vận chuyển hoặc quá tải mặt bằng kho.
+                  Remaining composed and decisive when encountering freight delays, inventory spikes, or shifting dispatch schedules.
                 </p>
               </div>
             </div>
@@ -761,46 +586,66 @@
           <div class="lg:col-span-5 bg-ruina-surface border border-ruina-border rounded-xl p-6 space-y-4">
             <div class="flex items-center justify-between border-b border-ruina-border pb-3">
               <h3 class="font-cinzel text-sm font-bold text-ruina-gold tracking-wider">
-                THÔNG SỐ TIẾP ĐÓN (SPECIFICATIONS)
+                PATRON SPECIFICATIONS
               </h3>
               <span class="font-mono text-xs text-ruina-muted">INDEX 2006</span>
             </div>
 
+            <!-- Compact Portrait Header -->
+            <div class="flex items-center gap-3.5 p-2.5 rounded bg-ruina-dark/80 border border-ruina-border">
+              <div class="w-12 h-16 rounded bg-ruina-surface border border-ruina-gold/70 overflow-hidden shrink-0 shadow-md">
+                <img id="about-portrait-img" src="/avatar.jpg" alt="Nguyen Bao Hung" class="w-full h-full object-cover object-top" onerror="this.onerror=null; this.src='https://i.postimg.cc/L8J9VPBj/portfolio.jpg';" />
+              </div>
+              <div class="space-y-0.5">
+                <span class="text-[10px] font-mono text-ruina-gold uppercase tracking-wider block">Patron Librarian Dossier</span>
+                <span class="font-cinzel text-sm font-bold text-ruina-parchment block">Nguyen Bao Hung</span>
+                <span class="text-[11px] text-ruina-muted block">FTU Logistics & Supply Chain Management · K63</span>
+              </div>
+            </div>
+
             <div class="space-y-3 text-xs font-mono">
               <div class="flex justify-between py-1 border-b border-ruina-border/60">
-                <span class="text-ruina-muted">HỌ VÀ TÊN</span>
-                <span class="text-ruina-parchment font-semibold">Nguyễn Bảo Hưng</span>
+                <span class="text-ruina-muted">FULL NAME</span>
+                <span class="text-ruina-parchment font-semibold">Nguyen Bao Hung</span>
               </div>
               <div class="flex justify-between py-1 border-b border-ruina-border/60">
-                <span class="text-ruina-muted">NGÀY SINH</span>
-                <span class="text-ruina-parchment">19/07/2006</span>
+                <span class="text-ruina-muted">DATE OF BIRTH</span>
+                <span class="text-ruina-parchment">July 19, 2006</span>
               </div>
               <div class="flex justify-between py-1 border-b border-ruina-border/60">
-                <span class="text-ruina-muted">TRƯỜNG ĐÀO TẠO</span>
-                <span class="text-ruina-gold font-medium">Đại học Ngoại thương (FTU)</span>
+                <span class="text-ruina-muted">CUMULATIVE GPA</span>
+                <span class="text-ruina-gold font-bold">3.69 / 4.0</span>
               </div>
               <div class="flex justify-between py-1 border-b border-ruina-border/60">
-                <span class="text-ruina-muted">CHUYÊN NGÀNH</span>
-                <span class="text-ruina-parchment">Logistics & Quản lý Chuỗi cung ứng</span>
+                <span class="text-ruina-muted">ENGLISH CREDENTIAL</span>
+                <span class="text-ruina-goldLight font-bold">IELTS 8.0</span>
               </div>
               <div class="flex justify-between py-1 border-b border-ruina-border/60">
-                <span class="text-ruina-muted">MỤC TIÊU NGHỀ NGHIỆP</span>
-                <span class="text-ruina-crimsonLight font-semibold">Giám sát / Quản lý kho vận</span>
+                <span class="text-ruina-muted">CLUB AFFILIATION</span>
+                <span class="text-ruina-parchment text-right">Member of FTU Youth Leadership club - Academic committee</span>
               </div>
               <div class="flex justify-between py-1 border-b border-ruina-border/60">
-                <span class="text-ruina-muted">EMAIL TRƯỜNG</span>
+                <span class="text-ruina-muted">ALMA MATER</span>
+                <span class="text-ruina-gold font-medium">Foreign Trade University (FTU)</span>
+              </div>
+              <div class="flex justify-between py-1 border-b border-ruina-border/60">
+                <span class="text-ruina-muted">CAREER TARGET</span>
+                <span class="text-ruina-crimsonLight font-semibold">Warehouse Supervisor</span>
+              </div>
+              <div class="flex justify-between py-1 border-b border-ruina-border/60">
+                <span class="text-ruina-muted">UNIVERSITY EMAIL</span>
                 <span class="text-ruina-parchment truncate max-w-[200px]">k63.2412150133@ftu.edu.vn</span>
               </div>
               <div class="flex justify-between py-1">
-                <span class="text-ruina-muted">SỐ ĐIỆN THOẠI</span>
+                <span class="text-ruina-muted">TELEPHONE</span>
                 <span class="text-ruina-parchment">0936 712 233</span>
               </div>
             </div>
 
             <div class="pt-3 border-t border-ruina-border flex items-center justify-between">
-              <span class="text-xs text-ruina-muted font-cinzel">SẴN SÀNG CHO TIẾP ĐÓN</span>
+              <span class="text-xs text-ruina-muted font-cinzel">RECEPTION STATUS: READY</span>
               <a href="#reception" class="text-xs font-cinzel text-ruina-gold hover:text-ruina-goldLight font-bold">
-                TIẾP ĐÓN NGAY &rarr;
+                INITIATE RECEPTION &rarr;
               </a>
             </div>
 
@@ -812,246 +657,98 @@
     </section>
 
     <!-- ========================================== -->
-    <!-- 4. PROJECTS SHOWCASE: THE BOOKS OF RUINA -->
+    <!-- 3.5. EXPERIENCE & EXTRACURRICULARS SECTION -->
     <!-- ========================================== -->
-    <section id="books" class="py-16 sm:py-20 bg-ruina-black border-b border-ruina-border">
+    <section id="experience" class="py-16 sm:py-20 bg-ruina-black border-b border-ruina-border">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <!-- Header & Category Switcher -->
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-          <div class="max-w-xl">
-            <p class="font-cinzel text-xs font-semibold tracking-widest text-ruina-gold uppercase mb-1">
-              THE SHELVES OF MEMORY · DỰ ÁN & ĐỀ TÀI TIÊU BIỂU
-            </p>
-            <h2 class="font-cinzel text-2xl sm:text-3xl font-bold tracking-wide text-ruina-parchment">
-              Các Cuốn Sách Tri Thức Đã Đúc Kết
-            </h2>
-            <p class="text-xs sm:text-sm text-slate-400 mt-2 font-light">
-              Mỗi đề tài nghiên cứu và dự án đại diện cho một cuốn sách được khai phóng qua quá trình nghiên cứu thực địa, khảo sát thị trường và giải pháp kỹ thuật.
-            </p>
-          </div>
-
-          <!-- Filter buttons styled like Ruina battle tabs -->
-          <div class="flex items-center gap-1.5 p-1 bg-ruina-surface border border-ruina-border rounded text-xs font-cinzel self-start md:self-auto">
-            <button onclick="filterBooks('all')" id="btn-tab-all" class="book-tab px-3 py-1.5 rounded bg-ruina-gold text-ruina-black font-bold transition-all">
-              Tất cả (5)
-            </button>
-            <button onclick="filterBooks('warehouse')" id="btn-tab-warehouse" class="book-tab px-3 py-1.5 rounded text-ruina-muted hover:text-ruina-gold transition-all">
-              Kho vận & Nghiên cứu
-            </button>
-            <button onclick="filterBooks('content')" id="btn-tab-content" class="book-tab px-3 py-1.5 rounded text-ruina-muted hover:text-ruina-gold transition-all">
-              Số hóa & Nội dung
-            </button>
-          </div>
+        <div class="max-w-2xl mb-12">
+          <p class="font-cinzel text-xs font-semibold tracking-widest text-ruina-gold uppercase mb-1">
+            BOOK OF EXPERIENCE · ACADEMIC ENGAGEMENT
+          </p>
+          <h2 class="font-cinzel text-2xl sm:text-3xl font-bold tracking-wide text-ruina-parchment">
+            Scholarly Research & Institutional Leadership
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-400 mt-2 font-light">
+            Synthesizing structured dialectical thinking from university academic leadership with practical supply chain optimization methodologies.
+          </p>
         </div>
 
-        <!-- 2 Primary Highlight Books (Large Key Page Cards) -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8" id="primary-book-grid">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           
-          <!-- Book 1: Retail Warehouse & Shelves Management (Winmart Study) -->
-          <div class="book-card bg-ruina-surface border-2 border-ruina-gold/40 hover:border-ruina-gold rounded-xl p-7 transition-all flex flex-col justify-between shadow-xl" data-category="warehouse">
-            <div class="space-y-4">
-              
-              <!-- Card Header -->
-              <div class="flex items-center justify-between border-b border-ruina-border pb-2.5">
-                <div class="flex items-center gap-2">
-                  <span class="w-2.5 h-2.5 bg-ruina-gold rotate-45 inline-block"></span>
-                  <span class="font-cinzel text-xs text-ruina-gold font-bold">BOOK OF STORAGE · CUỐN SÁCH KHO VẬN</span>
-                </div>
-                <span class="font-mono text-[11px] text-ruina-muted">RESEARCH 2024-2025</span>
+          <!-- Main Experience Card: FTU Young Political Theorists Club -->
+          <div class="lg:col-span-8 bg-ruina-surface border-2 border-ruina-gold/40 rounded-xl p-6 sm:p-8 space-y-5 relative shadow-xl">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-ruina-border pb-4 gap-2">
+              <div>
+                <span class="font-mono text-xs text-ruina-gold font-semibold uppercase tracking-wider">ACADEMIC & LEADERSHIP SOCIETY</span>
+                <h3 class="font-cinzel text-lg sm:text-xl font-bold text-ruina-parchment mt-0.5">
+                  FTU Youth Leadership Club (FYL)
+                </h3>
+                <p class="text-xs text-ruina-goldLight font-medium">Foreign Trade University, Hanoi</p>
               </div>
+              <div class="sm:text-right font-mono text-xs text-ruina-muted">
+                <span class="inline-block px-2.5 py-1 rounded bg-ruina-dark border border-ruina-border text-ruina-gold">
+                  Academic Committee Member
+                </span>
+                <div class="mt-1 text-[11px] text-ruina-muted">Cohort K63 · Active Tenured Member</div>
+              </div>
+            </div>
 
-              <!-- Title -->
-              <h3 class="font-cinzel text-xl font-bold text-ruina-parchment leading-snug">
-                Phương Pháp Quản Lý Kho và Kệ Hàng Chuỗi Siêu Thị Bán Lẻ
-              </h3>
-
-              <!-- Description -->
-              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-light">
-                Chủ trì lên ý tưởng và xây dựng khung nghiên cứu thực tiễn về cấu trúc mặt bằng kho hàng bán lẻ, phân luồng luân chuyển hàng hóa và tối ưu hóa vị trí sắp xếp trên kệ (Slotting optimization) cho chuỗi bán lẻ quy mô lớn.
+            <div class="space-y-3 text-xs sm:text-sm text-slate-300 leading-relaxed font-light">
+              <p>
+                In my capacity as an <strong class="text-ruina-gold font-medium">Academic Committee Member</strong>, I am actively charged with foundational research and scholastic initiatives across the organization:
               </p>
-
-              <!-- Research Insights -->
-              <div class="space-y-1.5 text-xs text-slate-400 bg-ruina-dark/80 p-3.5 rounded border border-ruina-border">
-                <div class="flex items-start gap-2">
-                  <span class="text-ruina-gold font-bold">&bull;</span>
-                  <span>Phân tích nhóm hàng SKU theo tần suất xuất nhập (Fast/Slow moving items).</span>
-                </div>
-                <div class="flex items-start gap-2">
-                  <span class="text-ruina-gold font-bold">&bull;</span>
-                  <span>Đề xuất giải pháp giảm quãng đường gom hàng (picking route) của nhân viên.</span>
-                </div>
-                <div class="flex items-start gap-2">
-                  <span class="text-ruina-gold font-bold">&bull;</span>
-                  <span>Ứng dụng quy chuẩn 5S & FIFO trong kiểm soát tem mác, hạn sử dụng.</span>
-                </div>
-              </div>
-
-              <!-- Tags -->
-              <div class="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-xs font-mono text-ruina-muted pt-1">
-                <span class="text-ruina-gold font-medium">Bố trí mặt bằng kho</span>
-                <span>/</span>
-                <span class="text-ruina-gold font-medium">Tối ưu kệ hàng (Slotting)</span>
-                <span>/</span>
-                <span class="text-ruina-gold font-medium">Phân tích SKU</span>
-                <span>/</span>
-                <span class="text-ruina-gold font-medium">Chuỗi siêu thị</span>
-              </div>
-
+              <ul class="space-y-2 text-xs text-slate-300">
+                <li class="flex items-start gap-2.5">
+                  <span class="text-ruina-gold font-bold mt-0.5">&bull;</span>
+                  <span><strong>Research Framework Formulation:</strong> Authoring foundational academic outlines, research briefs, and structural analyses on socio-economic and policy paradigms.</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="text-ruina-gold font-bold mt-0.5">&bull;</span>
+                  <span><strong>Critical Review & Colloquium Curation:</strong> Leading peer critiques, quality auditing specialized publications, and co-facilitating academic seminars and intellectual colloquia.</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="text-ruina-gold font-bold mt-0.5">&bull;</span>
+                  <span><strong>Systemic Problem Formulation:</strong> Transforming high-level analytical frameworks directly into operational methodologies for warehouse floor planning and supply chain optimization.</span>
+                </li>
+              </ul>
             </div>
 
-            <!-- Footer Action -->
-            <div class="pt-5 mt-5 border-t border-ruina-border flex items-center justify-between">
-              <button onclick="inspectBook('winmart')" class="font-cinzel text-xs font-bold text-ruina-gold hover:text-ruina-goldLight flex items-center gap-1.5 transition-colors">
-                <span>MỞ SÁCH ĐỌC CHI TIẾT</span>
-                <span>&rarr;</span>
-              </button>
-              <span class="font-mono text-xs text-ruina-crimson font-bold">P.01 // WINMART STUDY</span>
-            </div>
           </div>
 
-          <!-- Book 2: Personal Portfolio Website Architecture -->
-          <div class="book-card bg-ruina-surface border-2 border-ruina-gold/40 hover:border-ruina-gold rounded-xl p-7 transition-all flex flex-col justify-between shadow-xl" data-category="content">
-            <div class="space-y-4">
-              
-              <!-- Card Header -->
-              <div class="flex items-center justify-between border-b border-ruina-border pb-2.5">
-                <div class="flex items-center gap-2">
-                  <span class="w-2.5 h-2.5 bg-ruina-crimson rotate-45 inline-block"></span>
-                  <span class="font-cinzel text-xs text-ruina-crimsonLight font-bold">BOOK OF CODEX · SỐ HÓA THƯ VIỆN</span>
-                </div>
-                <span class="font-mono text-[11px] text-ruina-muted">FRONTEND 2025</span>
+          <!-- Academic Metrics Summary Card -->
+          <div class="lg:col-span-4 bg-ruina-surface border border-ruina-border rounded-xl p-6 flex flex-col justify-between space-y-5">
+            <div>
+              <div class="flex items-center gap-2 border-b border-ruina-border pb-3">
+                <span class="w-2.5 h-2.5 bg-ruina-gold rotate-45 inline-block"></span>
+                <h4 class="font-cinzel text-xs font-bold text-ruina-gold tracking-wider uppercase">
+                  FOUNDATIONAL BENCHMARKS
+                </h4>
               </div>
 
-              <!-- Title -->
-              <h3 class="font-cinzel text-xl font-bold text-ruina-parchment leading-snug">
-                Xây Dựng Website Thư Viện Portfolio Phong Cách Library of Ruina
-              </h3>
-
-              <!-- Description -->
-              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-light">
-                Thiết kế và lập trình không gian trực tuyến cá nhân lấy cảm hứng từ tựa game Library of Ruina. Tích hợp phần mở đầu (The Invitation) đậm chất nghệ thuật, giao diện dark mode sang trọng, responsive trên mọi thiết bị.
-              </p>
-
-              <!-- Research Insights -->
-              <div class="space-y-1.5 text-xs text-slate-400 bg-ruina-dark/80 p-3.5 rounded border border-ruina-border">
-                <div class="flex items-start gap-2">
-                  <span class="text-ruina-crimsonLight font-bold">&bull;</span>
-                  <span>Cấu trúc mã nguồn độc lập trong một file HTML duy nhất, không phụ thuộc build tool nặng.</span>
+              <div class="mt-4 space-y-4 text-xs font-mono">
+                <div class="p-3 rounded bg-ruina-dark border border-ruina-border/80">
+                  <div class="text-ruina-muted text-[10px] uppercase">Academic Standing</div>
+                  <div class="text-xl font-bold text-ruina-gold mt-0.5">GPA: 3.69 / 4.0</div>
+                  <p class="text-[11px] text-slate-400 font-sans mt-1">Logistics & Supply Chain Management Major, FTU</p>
                 </div>
-                <div class="flex items-start gap-2">
-                  <span class="text-ruina-crimsonLight font-bold">&bull;</span>
-                  <span>Ứng dụng Tailwind CSS, font Cinzel và Be Vietnam Pro tạo tính nhận diện độc đáo.</span>
+
+                <div class="p-3 rounded bg-ruina-dark border border-ruina-border/80">
+                  <div class="text-ruina-muted text-[10px] uppercase">Linguistic Fluency</div>
+                  <div class="text-xl font-bold text-ruina-goldLight mt-0.5">IELTS: 8.0 Overall</div>
+                  <p class="text-[11px] text-slate-400 font-sans mt-1">Full capacity for international supply chain research & coordination</p>
                 </div>
-                <div class="flex items-start gap-2">
-                  <span class="text-ruina-crimsonLight font-bold">&bull;</span>
-                  <span>Tích hợp bộ phát âm thanh môi trường thư viện Web Audio API không cần file MP3 ngoài.</span>
+
+                <div class="p-3 rounded bg-ruina-dark border border-ruina-border/80">
+                  <div class="text-ruina-muted text-[10px] uppercase">Working Demeanor</div>
+                  <div class="text-xs font-bold text-ruina-parchment mt-0.5">Rigorous & Accountable</div>
+                  <p class="text-[11px] text-slate-400 font-sans mt-1">High personal ownership in both autonomous inquiry and team synthesis</p>
                 </div>
               </div>
-
-              <!-- Tags -->
-              <div class="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-xs font-mono text-ruina-muted pt-1">
-                <span class="text-ruina-gold font-medium">HTML5 & Tailwind</span>
-                <span>/</span>
-                <span class="text-ruina-gold font-medium">Library of Ruina Theme</span>
-                <span>/</span>
-                <span class="text-ruina-gold font-medium">Web Audio API</span>
-                <span>/</span>
-                <span class="text-ruina-gold font-medium">Minimal UI</span>
-              </div>
-
             </div>
 
-            <!-- Footer Action -->
-            <div class="pt-5 mt-5 border-t border-ruina-border flex items-center justify-between">
-              <button onclick="inspectBook('portfolio')" class="font-cinzel text-xs font-bold text-ruina-gold hover:text-ruina-goldLight flex items-center gap-1.5 transition-colors">
-                <span>MỞ SÁCH ĐỌC CHI TIẾT</span>
-                <span>&rarr;</span>
-              </button>
-              <span class="font-mono text-xs text-ruina-crimson font-bold">P.02 // RUINA PORTFOLIO</span>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- 3 Supplementary Books Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="secondary-book-grid">
-          
-          <!-- Book 3: Audiobook Weekly -->
-          <div class="book-card bg-ruina-surface border border-ruina-border hover:border-ruina-gold/60 rounded-xl p-5 space-y-3 transition-colors" data-category="content">
-            <div class="flex items-center justify-between text-[11px] font-mono text-ruina-muted">
-              <span class="text-ruina-gold">BOOK OF VOICE</span>
-              <span>SURVEY</span>
-            </div>
-            <h4 class="font-cinzel text-base font-bold text-ruina-parchment">
-              Dự Án "Sách Nói Hàng Tuần"
-            </h4>
-            <p class="text-xs text-slate-400 leading-relaxed font-light">
-              Khảo sát nhu cầu người nghe, phân loại thị hiếu đọc sách của sinh viên và chọn lọc danh mục sách kinh doanh, kỹ năng, chuỗi cung ứng cho chuỗi nội dung âm thanh.
-            </p>
-            <div class="pt-2 text-xs font-mono text-ruina-muted flex flex-wrap gap-2">
-              <span class="text-ruina-gold">Khảo sát</span>
-              <span>·</span>
-              <span class="text-ruina-gold">Google Forms</span>
-              <span>·</span>
-              <span class="text-ruina-gold">Biên tập</span>
-            </div>
-            <div class="pt-2">
-              <button onclick="inspectBook('audiobook')" class="text-xs font-cinzel text-ruina-gold hover:underline">
-                Xem chi tiết &rarr;
-              </button>
-            </div>
-          </div>
-
-          <!-- Book 4: World Freight History -->
-          <div class="book-card bg-ruina-surface border border-ruina-border hover:border-ruina-gold/60 rounded-xl p-5 space-y-3 transition-colors" data-category="warehouse">
-            <div class="flex items-center justify-between text-[11px] font-mono text-ruina-muted">
-              <span class="text-ruina-gold">BOOK OF VOYAGES</span>
-              <span>HISTORY</span>
-            </div>
-            <h4 class="font-cinzel text-base font-bold text-ruina-parchment">
-              Lịch Sử Phát Triển Ngành Vận Tải Thế Giới
-            </h4>
-            <p class="text-xs text-slate-400 leading-relaxed font-light">
-              Lên ý tưởng và biên soạn chuyên đề lịch sử vận tải: từ tuyến thương mại hàng hải cổ xưa, kỷ nguyên container hóa (Containerization) đến vận tải đa phương thức liên lục địa.
-            </p>
-            <div class="pt-2 text-xs font-mono text-ruina-muted flex flex-wrap gap-2">
-              <span class="text-ruina-gold">Containerization</span>
-              <span>·</span>
-              <span class="text-ruina-gold">Vận tải biển</span>
-              <span>·</span>
-              <span class="text-ruina-gold">FTU</span>
-            </div>
-            <div class="pt-2">
-              <button onclick="inspectBook('freight_history')" class="text-xs font-cinzel text-ruina-gold hover:underline">
-                Xem chi tiết &rarr;
-              </button>
-            </div>
-          </div>
-
-          <!-- Book 5: 5 Days on Freight Ship -->
-          <div class="book-card bg-ruina-surface border border-ruina-border hover:border-ruina-gold/60 rounded-xl p-5 space-y-3 transition-colors" data-category="warehouse">
-            <div class="flex items-center justify-between text-[11px] font-mono text-ruina-muted">
-              <span class="text-ruina-gold">BOOK OF SEAFARERS</span>
-              <span>FIELDWORK</span>
-            </div>
-            <h4 class="font-cinzel text-base font-bold text-ruina-parchment">
-              5 Ngày Làm Thủy Thủ Trên Tàu Vận Tải
-            </h4>
-            <p class="text-xs text-slate-400 leading-relaxed font-light">
-              Đóng góp chuẩn bị nội dung và hệ thống hóa thực tế hành trình 5 ngày trên tàu chở hàng: quy trình cẩu nâng bốc dỡ container cảng biển, nghiệp vụ chứng từ và bảo quản boong tàu.
-            </p>
-            <div class="pt-2 text-xs font-mono text-ruina-muted flex flex-wrap gap-2">
-              <span class="text-ruina-gold">Hàng hải</span>
-              <span>·</span>
-              <span class="text-ruina-gold">Bốc dỡ cảng</span>
-              <span>·</span>
-              <span class="text-ruina-gold">Thực địa</span>
-            </div>
-            <div class="pt-2">
-              <button onclick="inspectBook('ship_crew')" class="text-xs font-cinzel text-ruina-gold hover:underline">
-                Xem chi tiết &rarr;
-              </button>
+            <div class="pt-3 border-t border-ruina-border text-[11px] text-ruina-muted font-cinzel">
+              STUDENT COHORT: FTU K63
             </div>
           </div>
 
@@ -1061,20 +758,284 @@
     </section>
 
     <!-- ========================================== -->
-    <!-- 5. FLOORS OF MASTERY / SKILLS & TECH STACK -->
+    <!-- 4. PROJECTS SHOWCASE: 4 THEMATIC BOOKS -->
     <!-- ========================================== -->
-    <section id="floors" class="py-16 sm:py-20 bg-ruina-dark border-b border-ruina-border">
+    <section id="books" class="py-16 sm:py-20 bg-ruina-dark border-b border-ruina-border">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+          <div class="max-w-xl">
+            <p class="font-cinzel text-xs font-semibold tracking-widest text-ruina-gold uppercase mb-1">
+              BOOK OF FEATS · SELECTED INQUIRIES & WORKS
+            </p>
+            <h2 class="font-cinzel text-2xl sm:text-3xl font-bold tracking-wide text-ruina-parchment">
+              The 4 Books of Feats
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-400 mt-2 font-light">
+              Core research inquiries spanning Winmart warehouse slotting, audiobook consumer demand analytics, world freight chronicles, and coastal vessel fieldwork.
+            </p>
+          </div>
+
+          <div class="flex items-center gap-1.5 p-1 bg-ruina-surface border border-ruina-border rounded text-xs font-cinzel self-start md:self-auto">
+            <button onclick="filterBooks('all')" id="btn-tab-all" class="book-tab px-3 py-1.5 rounded bg-ruina-gold text-ruina-black font-bold transition-all">
+              All (4)
+            </button>
+            <button onclick="filterBooks('logistics')" id="btn-tab-logistics" class="book-tab px-3 py-1.5 rounded text-ruina-muted hover:text-ruina-gold transition-all">
+              Warehousing & Freight
+            </button>
+            <button onclick="filterBooks('research')" id="btn-tab-research" class="book-tab px-3 py-1.5 rounded text-ruina-muted hover:text-ruina-gold transition-all">
+              Surveys & Editorial
+            </button>
+          </div>
+        </div>
+
+        <!-- 4 Primary Projects Grid (2x2 layout) -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8" id="primary-book-grid">
+          
+          <!-- PROJECT 1: WINMART WAREHOUSE & SHELVES -->
+          <div class="book-card bg-ruina-surface border-2 border-ruina-gold/40 hover:border-ruina-gold rounded-xl p-7 transition-all flex flex-col justify-between shadow-xl" data-category="logistics">
+            <div class="space-y-4">
+              
+              <div class="flex items-center justify-between border-b border-ruina-border pb-2.5">
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 bg-ruina-gold rotate-45 inline-block"></span>
+                  <span class="font-cinzel text-xs text-ruina-gold font-bold">PROJECT 01 · WAREHOUSE & STORAGE</span>
+                </div>
+                <span class="font-mono text-[11px] text-ruina-muted">RESEARCH 2024-2025</span>
+              </div>
+
+              <h3 class="font-cinzel text-xl font-bold text-ruina-parchment leading-snug">
+                Storage and Shelf Management Methodologies at Winmart
+              </h3>
+
+              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-light">
+                <strong class="text-ruina-gold font-medium">Conceptualized and established the core research framework</strong> for optimizing warehouse layout, product velocity routing, and rack slotting (Slotting Optimization) tailored to the Winmart retail chain.
+              </p>
+
+              <div class="space-y-1.5 text-xs text-slate-400 bg-ruina-dark/80 p-3.5 rounded border border-ruina-border">
+                <div class="flex items-start gap-2">
+                  <span class="text-ruina-gold font-bold">&bull;</span>
+                  <span>Formulated SKU velocity classification modeling (Fast-Moving vs Slow-Moving goods).</span>
+                </div>
+                <div class="flex items-start gap-2">
+                  <span class="text-ruina-gold font-bold">&bull;</span>
+                  <span>Engineered picker travel distance reduction proposals across primary storage aisles.</span>
+                </div>
+                <div class="flex items-start gap-2">
+                  <span class="text-ruina-gold font-bold">&bull;</span>
+                  <span>Implemented 5S and First-In, First-Out (FIFO) standards to prevent perishable shrinkage.</span>
+                </div>
+              </div>
+
+              <div class="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-xs font-mono text-ruina-muted pt-1">
+                <span class="text-ruina-gold font-medium">Warehouse Layout</span>
+                <span>/</span>
+                <span class="text-ruina-gold font-medium">Slotting Optimization</span>
+                <span>/</span>
+                <span class="text-ruina-gold font-medium">ABC Classification</span>
+                <span>/</span>
+                <span class="text-ruina-gold font-medium">Winmart</span>
+              </div>
+
+            </div>
+
+            <div class="pt-5 mt-5 border-t border-ruina-border flex items-center justify-between">
+              <button onclick="inspectBook('winmart')" class="font-cinzel text-xs font-bold text-ruina-gold hover:text-ruina-goldLight flex items-center gap-1.5 transition-colors">
+                <span>INSPECT BOOK DETAILS</span>
+                <span>&rarr;</span>
+              </button>
+              <span class="font-mono text-xs text-ruina-crimson font-bold">P.01 // WINMART STUDY</span>
+            </div>
+          </div>
+
+          <!-- PROJECT 2: WEEKLY AUDIOBOOKS -->
+          <div class="book-card bg-ruina-surface border-2 border-ruina-gold/40 hover:border-ruina-gold rounded-xl p-7 transition-all flex flex-col justify-between shadow-xl" data-category="research">
+            <div class="space-y-4">
+              
+              <div class="flex items-center justify-between border-b border-ruina-border pb-2.5">
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 bg-ruina-goldLight rotate-45 inline-block"></span>
+                  <span class="font-cinzel text-xs text-ruina-goldLight font-bold">PROJECT 02 · USER SURVEY & EDITORIAL</span>
+                </div>
+                <span class="font-mono text-[11px] text-ruina-muted">DIGITAL AUDIO</span>
+              </div>
+
+              <h3 class="font-cinzel text-xl font-bold text-ruina-parchment leading-snug">
+                Needs Assessment and Title Selection for the "Weekly Audiobooks" Project
+              </h3>
+
+              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-light">
+                <strong class="text-ruina-gold font-medium">Conducted user needs assessment and curated title selection</strong> for the "Weekly Audiobooks" initiative: analyzing audio content consumption behaviors among youth, authoring survey instruments, and structuring editorial releases.
+              </p>
+
+              <div class="space-y-1.5 text-xs text-slate-400 bg-ruina-dark/80 p-3.5 rounded border border-ruina-border">
+                <div class="flex items-start gap-2">
+                  <span class="text-ruina-goldLight font-bold">&bull;</span>
+                  <span>Investigated digital audio listening habits across collegiate and young professional cohorts.</span>
+                </div>
+                <div class="flex items-start gap-2">
+                  <span class="text-ruina-goldLight font-bold">&bull;</span>
+                  <span>Aggregated, cleaned, and analyzed qualitative datasets using Google Sheets and Excel.</span>
+                </div>
+                <div class="flex items-start gap-2">
+                  <span class="text-ruina-goldLight font-bold">&bull;</span>
+                  <span>Curated impactful publications in economic theory, self-mastery, and logistics workflows.</span>
+                </div>
+              </div>
+
+              <div class="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-xs font-mono text-ruina-muted pt-1">
+                <span class="text-ruina-gold font-medium">User Needs Survey</span>
+                <span>/</span>
+                <span class="text-ruina-gold font-medium">Data Analytics</span>
+                <span>/</span>
+                <span class="text-ruina-gold font-medium">Title Selection</span>
+                <span>/</span>
+                <span class="text-ruina-gold font-medium">Digital Audio</span>
+              </div>
+
+            </div>
+
+            <div class="pt-5 mt-5 border-t border-ruina-border flex items-center justify-between">
+              <button onclick="inspectBook('audiobook')" class="font-cinzel text-xs font-bold text-ruina-gold hover:text-ruina-goldLight flex items-center gap-1.5 transition-colors">
+                <span>INSPECT BOOK DETAILS</span>
+                <span>&rarr;</span>
+              </button>
+              <span class="font-mono text-xs text-ruina-crimson font-bold">P.02 // AUDIOBOOK WEEKLY</span>
+            </div>
+          </div>
+
+          <!-- PROJECT 3: WORLD FREIGHT HISTORY -->
+          <div class="book-card bg-ruina-surface border-2 border-ruina-gold/40 hover:border-ruina-gold rounded-xl p-7 transition-all flex flex-col justify-between shadow-xl" data-category="logistics">
+            <div class="space-y-4">
+              
+              <div class="flex items-center justify-between border-b border-ruina-border pb-2.5">
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 bg-ruina-gold rotate-45 inline-block"></span>
+                  <span class="font-cinzel text-xs text-ruina-gold font-bold">PROJECT 03 · SCHOLARSHIP & FREIGHT HISTORY</span>
+                </div>
+                <span class="font-mono text-[11px] text-ruina-muted">GLOBAL FREIGHT</span>
+              </div>
+
+              <h3 class="font-cinzel text-xl font-bold text-ruina-parchment leading-snug">
+                The History of Global Freight Development
+              </h3>
+
+              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-light">
+                <strong class="text-ruina-gold font-medium">Ideated and drafted comprehensive content</strong> for the monograph "The History of Global Freight Development": tracing maritime trade routes, steam power, Malcom McLean's containerization revolution, and modern intermodal corridors.
+              </p>
+
+              <div class="space-y-1.5 text-xs text-slate-400 bg-ruina-dark/80 p-3.5 rounded border border-ruina-border">
+                <div class="flex items-start gap-2">
+                  <span class="text-ruina-gold font-bold">&bull;</span>
+                  <span>Synthesized pivotal maritime milestones and standard container dimensions evolution.</span>
+                </div>
+                <div class="flex items-start gap-2">
+                  <span class="text-ruina-gold font-bold">&bull;</span>
+                  <span>Analyzed how multimodal logistics exponentially reduced international trade friction costs.</span>
+                </div>
+                <div class="flex items-start gap-2">
+                  <span class="text-ruina-gold font-bold">&bull;</span>
+                  <span>Distilled historical logistics imperatives applicable to Vietnam's contemporary supply chain modernization.</span>
+                </div>
+              </div>
+
+              <div class="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-xs font-mono text-ruina-muted pt-1">
+                <span class="text-ruina-gold font-medium">Freight History</span>
+                <span>/</span>
+                <span class="text-ruina-gold font-medium">Containerization</span>
+                <span>/</span>
+                <span class="text-ruina-gold font-medium">Intermodal Logistics</span>
+                <span>/</span>
+                <span class="text-ruina-gold font-medium">FTU Supply Chain Management</span>
+              </div>
+
+            </div>
+
+            <div class="pt-5 mt-5 border-t border-ruina-border flex items-center justify-between">
+              <button onclick="inspectBook('freight_history')" class="font-cinzel text-xs font-bold text-ruina-gold hover:text-ruina-goldLight flex items-center gap-1.5 transition-colors">
+                <span>INSPECT BOOK DETAILS</span>
+                <span>&rarr;</span>
+              </button>
+              <span class="font-mono text-xs text-ruina-crimson font-bold">P.03 // FREIGHT HISTORY</span>
+            </div>
+          </div>
+
+          <!-- PROJECT 4: 5 DAYS AS A SEAFARER -->
+          <div class="book-card bg-ruina-surface border-2 border-ruina-gold/40 hover:border-ruina-gold rounded-xl p-7 transition-all flex flex-col justify-between shadow-xl" data-category="logistics">
+            <div class="space-y-4">
+              
+              <div class="flex items-center justify-between border-b border-ruina-border pb-2.5">
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 bg-ruina-crimson rotate-45 inline-block"></span>
+                  <span class="font-cinzel text-xs text-ruina-crimsonLight font-bold">PROJECT 04 · MARITIME FIELDWORK</span>
+                </div>
+                <span class="font-mono text-[11px] text-ruina-muted">SEAFARER CHRONICLE</span>
+              </div>
+
+              <h3 class="font-cinzel text-xl font-bold text-ruina-parchment leading-snug">
+                5 Days as a Seafarer Aboard a Cargo Ship
+              </h3>
+
+              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-light">
+                <strong class="text-ruina-gold font-medium">Contributed to content preparation and field documentation</strong> for the expository feature "5 Days as a Seafarer Aboard a Cargo Ship": detailing live vessel operations, port stevedoring, and maritime safety discipline.
+              </p>
+
+              <div class="space-y-1.5 text-xs text-slate-400 bg-ruina-dark/80 p-3.5 rounded border border-ruina-border">
+                <div class="flex items-start gap-2">
+                  <span class="text-ruina-crimsonLight font-bold">&bull;</span>
+                  <span>Documented quay crane container stowing and seal verification procedures.</span>
+                </div>
+                <div class="flex items-start gap-2">
+                  <span class="text-ruina-crimsonLight font-bold">&bull;</span>
+                  <span>Observed cargo lashing protocols to counterbalance vessel pitching during turbulent seas.</span>
+                </div>
+                <div class="flex items-start gap-2">
+                  <span class="text-ruina-crimsonLight font-bold">&bull;</span>
+                  <span>Extracted operational insights highlighting personal discipline and safety compliance.</span>
+                </div>
+              </div>
+
+              <div class="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-xs font-mono text-ruina-muted pt-1">
+                <span class="text-ruina-gold font-medium">Port Stevedoring</span>
+                <span>/</span>
+                <span class="text-ruina-gold font-medium">Cargo Vessel</span>
+                <span>/</span>
+                <span class="text-ruina-gold font-medium">Lashing Protocol</span>
+                <span>/</span>
+                <span class="text-ruina-gold font-medium">Maritime Safety</span>
+              </div>
+
+            </div>
+
+            <div class="pt-5 mt-5 border-t border-ruina-border flex items-center justify-between">
+              <button onclick="inspectBook('ship_crew')" class="font-cinzel text-xs font-bold text-ruina-gold hover:text-ruina-goldLight flex items-center gap-1.5 transition-colors">
+                <span>INSPECT BOOK DETAILS</span>
+                <span>&rarr;</span>
+              </button>
+              <span class="font-mono text-xs text-ruina-crimson font-bold">P.04 // SEAFARER FIELDWORK</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 5. BOOK OF MASTERY / SKILLS & TECH STACK -->
+    <!-- ========================================== -->
+    <section id="floors" class="py-16 sm:py-20 bg-ruina-black border-b border-ruina-border">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div class="max-w-2xl mb-12">
           <p class="font-cinzel text-xs font-semibold tracking-widest text-ruina-gold uppercase mb-1">
-            THE FLOORS OF DISCIPLINE · TẦNG THỰC HÀNH KỸ NĂNG
+            BOOK OF MASTERY · DOMAIN CAPABILITIES
           </p>
           <h2 class="font-cinzel text-2xl sm:text-3xl font-bold tracking-wide text-ruina-parchment">
-            Năng Lực Chuyên Nghiệp & Công Cụ Khảo Sát
+            Core Masteries & Analytical Apparatus
           </h2>
           <p class="text-xs sm:text-sm text-slate-400 mt-2 font-light">
-            Các kỹ năng được tôi luyện để đảm bảo sự chính xác tuyệt đối trong khâu kiểm soát kho bãi và ra quyết định chuỗi cung ứng.
+            Technical proficiencies forged to ensure mathematical rigor in warehouse spatial management and end-to-end supply chain execution.
           </p>
         </div>
 
@@ -1088,7 +1049,7 @@
                   I
                 </span>
                 <div>
-                  <h3 class="font-cinzel text-sm font-bold text-ruina-parchment">Kỹ Năng Kho Vận</h3>
+                  <h3 class="font-cinzel text-sm font-bold text-ruina-parchment">Warehousing & Storage</h3>
                   <p class="text-[10px] font-mono text-ruina-muted">FLOOR OF STORAGE</p>
                 </div>
               </div>
@@ -1097,20 +1058,20 @@
 
             <ul class="space-y-3 text-xs text-slate-300">
               <li class="space-y-0.5">
-                <strong class="font-semibold text-ruina-gold block">Quản lý kho & Bố trí kệ hàng:</strong>
-                <span class="text-slate-400 text-[11px] leading-relaxed block">Phân luồng layout kho, tối ưu vị trí (Slotting) và hành trình gom hàng (picking route).</span>
+                <strong class="font-semibold text-ruina-gold block">Storage Layout & Slotting:</strong>
+                <span class="text-slate-400 text-[11px] leading-relaxed block">Aisle routing configuration, vertical clearance optimization, and order picking minimization.</span>
               </li>
               <li class="space-y-0.5">
-                <strong class="font-semibold text-ruina-gold block">Kiểm soát tồn kho & SKU:</strong>
-                <span class="text-slate-400 text-[11px] leading-relaxed block">Phân loại ABC, kiểm kê định kỳ chu kỳ (cycle count), kiểm soát mức tồn kho an toàn.</span>
+                <strong class="font-semibold text-ruina-gold block">Inventory & SKU Control:</strong>
+                <span class="text-slate-400 text-[11px] leading-relaxed block">ABC categorization, perpetual cycle counting, safety stock buffers, and shrinkage mitigation.</span>
               </li>
               <li class="space-y-0.5">
-                <strong class="font-semibold text-ruina-gold block">Tiêu chuẩn 5S & Kaizen:</strong>
-                <span class="text-slate-400 text-[11px] leading-relaxed block">Giữ gìn không gian lưu trữ ngăn nắp, hạn chế nhầm lẫn và giảm thiểu hao hụt hàng hóa.</span>
+                <strong class="font-semibold text-ruina-gold block">5S Standardization & Kaizen:</strong>
+                <span class="text-slate-400 text-[11px] leading-relaxed block">Orderly storage zone discipline, labeling clarity, and continuous process refinement.</span>
               </li>
               <li class="space-y-0.5">
-                <strong class="font-semibold text-ruina-gold block">Điều phối luồng hàng:</strong>
-                <span class="text-slate-400 text-[11px] leading-relaxed block">Lập lịch trình vận tải, tiếp nhận chứng từ và phối hợp nhịp nhàng giữa cảng và kho.</span>
+                <strong class="font-semibold text-ruina-gold block">Freight Coordination:</strong>
+                <span class="text-slate-400 text-[11px] leading-relaxed block">Dispatch scheduling, dock door management, shipping manifest cross-checks, and port-to-warehouse sync.</span>
               </li>
             </ul>
           </div>
@@ -1123,7 +1084,7 @@
                   II
                 </span>
                 <div>
-                  <h3 class="font-cinzel text-sm font-bold text-ruina-parchment">Công Cụ Phân Tích</h3>
+                  <h3 class="font-cinzel text-sm font-bold text-ruina-parchment">Analytics & Tooling</h3>
                   <p class="text-[10px] font-mono text-ruina-muted">FLOOR OF TECHNOLOGY</p>
                 </div>
               </div>
@@ -1133,19 +1094,19 @@
             <ul class="space-y-3 text-xs text-slate-300">
               <li class="space-y-0.5">
                 <strong class="font-semibold text-ruina-gold block">Microsoft Excel & Google Sheets:</strong>
-                <span class="text-slate-400 text-[11px] leading-relaxed block">Thao tác nâng cao với VLOOKUP, XLOOKUP, PivotTable, Solver để mô hình hóa xuất nhập tồn.</span>
+                <span class="text-slate-400 text-[11px] leading-relaxed block">Advanced modeling via VLOOKUP, XLOOKUP, Pivot Tables, and Solver for capacity optimization.</span>
               </li>
               <li class="space-y-0.5">
                 <strong class="font-semibold text-ruina-gold block">Python & Google Colab:</strong>
-                <span class="text-slate-400 text-[11px] leading-relaxed block">Làm sạch bảng số liệu, xử lý DataFrame bằng Pandas cơ bản và trực quan hóa dữ liệu.</span>
+                <span class="text-slate-400 text-[11px] leading-relaxed block">Tabular data cleansing, Pandas DataFrame wrangling, and descriptive operational plotting.</span>
               </li>
               <li class="space-y-0.5">
-                <strong class="font-semibold text-ruina-gold block">Git & Quản Lý Phiên Bản:</strong>
-                <span class="text-slate-400 text-[11px] leading-relaxed block">Lưu trữ tài liệu đề tài, quản lý version và phối hợp làm việc trên GitHub.</span>
+                <strong class="font-semibold text-ruina-gold block">Git & Version Control:</strong>
+                <span class="text-slate-400 text-[11px] leading-relaxed block">Scholarly documentation tracking, version control workflows, and collaborative repositories on GitHub.</span>
               </li>
               <li class="space-y-0.5">
-                <strong class="font-semibold text-ruina-gold block">Nguyên lý Hệ Thống WMS / ERP:</strong>
-                <span class="text-slate-400 text-[11px] leading-relaxed block">Hiểu bản chất luồng dữ liệu mã vạch (barcode/RFID), phiếu nhập xuất kho tự động.</span>
+                <strong class="font-semibold text-ruina-gold block">WMS / ERP Architecture:</strong>
+                <span class="text-slate-400 text-[11px] leading-relaxed block">Familiarity with barcode/RFID data capture, automated pick lists, and warehouse management software logic.</span>
               </li>
             </ul>
           </div>
@@ -1158,7 +1119,7 @@
                   III
                 </span>
                 <div>
-                  <h3 class="font-cinzel text-sm font-bold text-ruina-parchment">Tác Phong & Phẩm Chất</h3>
+                  <h3 class="font-cinzel text-sm font-bold text-ruina-parchment">Virtues & Conduct</h3>
                   <p class="text-[10px] font-mono text-ruina-muted">FLOOR OF GENERAL WORKS</p>
                 </div>
               </div>
@@ -1167,20 +1128,20 @@
 
             <ul class="space-y-3 text-xs text-slate-300">
               <li class="space-y-0.5">
-                <strong class="font-semibold text-ruina-gold block">Tinh thần Trách nhiệm:</strong>
-                <span class="text-slate-400 text-[11px] leading-relaxed block">Tuyệt đối trung thực với số liệu, tuân thủ cam kết thời gian và quy chuẩn an toàn lao động.</span>
+                <strong class="font-semibold text-ruina-gold block">Ethical Accountability:</strong>
+                <span class="text-slate-400 text-[11px] leading-relaxed block">Uncompromising data honesty, punctual fulfillment of deadlines, and strict compliance with safety rules.</span>
               </li>
               <li class="space-y-0.5">
-                <strong class="font-semibold text-ruina-gold block">Chăm chỉ & Cầu thị:</strong>
-                <span class="text-slate-400 text-[11px] leading-relaxed block">Sẵn sàng học hỏi từ các cấp quản lý và công nhân hiện trường, trau dồi chuyên môn liên tục.</span>
+                <strong class="font-semibold text-ruina-gold block">Diligence & Humility:</strong>
+                <span class="text-slate-400 text-[11px] leading-relaxed block">Eager willingness to master ground-level operational details alongside front-line warehouse staff.</span>
               </li>
               <li class="space-y-0.5">
-                <strong class="font-semibold text-ruina-gold block">Linh hoạt Giải quyết Sự cố:</strong>
-                <span class="text-slate-400 text-[11px] leading-relaxed block">Giữ bình tĩnh khi xảy ra ách tắc vận chuyển, linh động điều chuyển phương án dự phòng.</span>
+                <strong class="font-semibold text-ruina-gold block">Dynamic Resilience:</strong>
+                <span class="text-slate-400 text-[11px] leading-relaxed block">Equanimity in resolving unexpected transportation bottlenecks and dock congestion.</span>
               </li>
               <li class="space-y-0.5">
-                <strong class="font-semibold text-ruina-gold block">Giao tiếp & Phối hợp:</strong>
-                <span class="text-slate-400 text-[11px] leading-relaxed block">Truyền đạt rành mạch giữa tài xế, nhân viên kho và phòng kế hoạch logistics.</span>
+                <strong class="font-semibold text-ruina-gold block">Dialectical Communication:</strong>
+                <span class="text-slate-400 text-[11px] leading-relaxed block">Clear synthesis refined through academic debate, connecting warehouse personnel, drivers, and planners.</span>
               </li>
             </ul>
           </div>
@@ -1193,67 +1154,62 @@
     <!-- ========================================== -->
     <!-- 6. RECEPTION / CONTACT SECTION -->
     <!-- ========================================== -->
-    <section id="reception" class="py-16 sm:py-20 bg-ruina-black">
+    <section id="reception" class="py-16 sm:py-20 bg-ruina-dark">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           
-          <!-- Contact Info Left (5 cols) -->
           <div class="lg:col-span-5 space-y-6">
             <div class="space-y-2">
-              <p class="font-cinzel text-xs font-semibold tracking-widest text-ruina-gold uppercase">BÀN TIẾP ĐÓN · THE RECEPTION DESK</p>
+              <p class="font-cinzel text-xs font-semibold tracking-widest text-ruina-gold uppercase">THE RECEPTION DESK · INQUIRIES & ENGAGEMENT</p>
               <h2 class="font-cinzel text-2xl sm:text-3xl font-bold tracking-wide text-ruina-parchment">
-                Gửi Thư Tiếp Đón & Trao Đổi Hợp Tác
+                Dispatch an Invitation to the Patron
               </h2>
               <p class="text-xs sm:text-sm text-slate-400 leading-relaxed font-light">
-                Mọi cánh cửa tại Thư viện Logistics luôn rộng mở chào đón các cơ hội thực tập, dự án nghiên cứu tối ưu hóa kho vận hoặc các cuộc thảo luận chuyên ngành.
+                The gates of the Library of the Archived remain perpetually open for internship inquiries, warehouse optimization partnerships, or scholarly discussions.
               </p>
             </div>
 
             <div class="space-y-3.5 text-xs font-mono">
               
-              <!-- FTU Email Box -->
               <div class="p-4 rounded bg-ruina-surface border border-ruina-border flex items-start gap-3">
                 <div class="w-8 h-8 rounded bg-ruina-dark border border-ruina-gold/50 text-ruina-gold flex items-center justify-center shrink-0">
                   ✉
                 </div>
                 <div class="overflow-hidden">
-                  <div class="text-[10px] text-ruina-muted uppercase">Email Đại học Ngoại thương</div>
+                  <div class="text-[10px] text-ruina-muted uppercase">University Academic Email</div>
                   <a href="mailto:k63.2412150133@ftu.edu.vn" class="text-ruina-parchment font-semibold hover:text-ruina-gold transition-colors block truncate mt-0.5">
                     k63.2412150133@ftu.edu.vn
                   </a>
                 </div>
               </div>
 
-              <!-- Personal Email Box -->
               <div class="p-4 rounded bg-ruina-surface border border-ruina-border flex items-start gap-3">
                 <div class="w-8 h-8 rounded bg-ruina-dark border border-ruina-gold/50 text-ruina-gold flex items-center justify-center shrink-0">
                   @
                 </div>
                 <div class="overflow-hidden">
-                  <div class="text-[10px] text-ruina-muted uppercase">Email cá nhân</div>
+                  <div class="text-[10px] text-ruina-muted uppercase">Personal Email</div>
                   <a href="mailto:nguyenbaohunga4@gmail.com" class="text-ruina-parchment font-semibold hover:text-ruina-gold transition-colors block truncate mt-0.5">
                     nguyenbaohunga4@gmail.com
                   </a>
                 </div>
               </div>
 
-              <!-- Phone Box -->
               <div class="p-4 rounded bg-ruina-surface border border-ruina-border flex items-start gap-3">
                 <div class="w-8 h-8 rounded bg-ruina-dark border border-ruina-gold/50 text-ruina-gold flex items-center justify-center shrink-0">
                   ✆
                 </div>
                 <div>
-                  <div class="text-[10px] text-ruina-muted uppercase">Số điện thoại / Zalo</div>
+                  <div class="text-[10px] text-ruina-muted uppercase">Direct Phone / Zalo</div>
                   <a href="tel:0936712233" class="text-ruina-parchment font-semibold hover:text-ruina-gold transition-colors block mt-0.5">
                     0936 712 233
                   </a>
                 </div>
               </div>
 
-              <!-- Location & Socials -->
-              <div class="p-3 bg-ruina-dark rounded border border-ruina-border/60 flex items-center justify-between text-ruina-muted text-[11px]">
-                <span>Địa điểm: Hà Nội, Việt Nam</span>
+              <div class="p-3 bg-ruina-surface rounded border border-ruina-border/60 flex items-center justify-between text-ruina-muted text-[11px]">
+                <span>Location: Hanoi, Vietnam</span>
                 <div class="flex items-center gap-3 font-cinzel text-ruina-gold">
                   <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="hover:underline">GitHub</a>
                   <span>·</span>
@@ -1264,14 +1220,13 @@
             </div>
           </div>
 
-          <!-- Reception Dispatch Form (7 cols) -->
           <div class="lg:col-span-7 bg-ruina-surface border-2 border-ruina-gold/40 rounded-xl p-6 sm:p-8 space-y-5 shadow-2xl">
             <div class="border-b border-ruina-border pb-3">
               <h3 class="font-cinzel text-base font-bold text-ruina-gold tracking-wider">
-                PHIẾU TIẾP ĐÓN KHÁCH (DISPATCH INVITATION)
+                GUEST RECEPTION DISPATCH FORM
               </h3>
               <p class="text-[11px] text-ruina-muted mt-0.5 font-light">
-                Điền thông điệp để gửi đến Thủ thư phụ trách. Phản hồi sẽ được gửi trong 24 giờ.
+                Submit an invitation to Patron Librarian Nguyen Bao Hung. Transmissions are acknowledged within 24 hours.
               </p>
             </div>
 
@@ -1280,26 +1235,26 @@
                 
                 <div>
                   <label for="guest-name" class="block font-cinzel text-ruina-parchment mb-1 font-semibold">
-                    DANH TÍNH QUÝ KHÁCH (NAME) *
+                    GUEST IDENTITY (FULL NAME) *
                   </label>
                   <input 
                     type="text" 
                     id="guest-name" 
                     required 
-                    placeholder="Ví dụ: Anh/Chị Quản lý Tuyển dụng"
+                    placeholder="e.g., Talent Partner / Operations Lead"
                     class="w-full px-3.5 py-2.5 bg-ruina-dark border border-ruina-border rounded text-ruina-parchment placeholder-slate-600 focus:border-ruina-gold transition-colors font-sans"
                   />
                 </div>
 
                 <div>
                   <label for="guest-email" class="block font-cinzel text-ruina-parchment mb-1 font-semibold">
-                    ĐỊA CHỈ HỒI ĐÁP (EMAIL) *
+                    DISPATCH ADDRESS (EMAIL) *
                   </label>
                   <input 
                     type="email" 
                     id="guest-email" 
                     required 
-                    placeholder="contact@company.com"
+                    placeholder="contact@enterprise.com"
                     class="w-full px-3.5 py-2.5 bg-ruina-dark border border-ruina-border rounded text-ruina-parchment placeholder-slate-600 focus:border-ruina-gold transition-colors font-sans"
                   />
                 </div>
@@ -1307,26 +1262,26 @@
 
               <div>
                 <label for="guest-subject" class="block font-cinzel text-ruina-parchment mb-1 font-semibold">
-                  MỤC TIÊU TIẾP ĐÓN (SUBJECT) *
+                  PURPOSE OF RECEPTION (SUBJECT) *
                 </label>
                 <input 
                   type="text" 
                   id="guest-subject" 
                   required 
-                  placeholder="Ví dụ: Cơ hội thực tập Quản lý Kho vận / Thảo luận đề tài"
+                  placeholder="e.g., Warehouse Operations Internship / Research Colloquium"
                   class="w-full px-3.5 py-2.5 bg-ruina-dark border border-ruina-border rounded text-ruina-parchment placeholder-slate-600 focus:border-ruina-gold transition-colors font-sans"
                 />
               </div>
 
               <div>
                 <label for="guest-message" class="block font-cinzel text-ruina-parchment mb-1 font-semibold">
-                  NỘI DUNG BỨC THƯ (MESSAGE) *
+                  DISPATCH MANUSCRIPT (MESSAGE) *
                 </label>
                 <textarea 
                   id="guest-message" 
                   rows="4" 
                   required 
-                  placeholder="Ghi rõ nội dung bạn muốn trao đổi cùng Thủ thư..."
+                  placeholder="Articulate your proposal or project requirements..."
                   class="w-full px-3.5 py-2.5 bg-ruina-dark border border-ruina-border rounded text-ruina-parchment placeholder-slate-600 focus:border-ruina-gold transition-colors font-sans resize-y"
                 ></textarea>
               </div>
@@ -1337,7 +1292,7 @@
                   id="reception-submit-btn"
                   class="px-6 py-2.5 bg-ruina-gold hover:bg-ruina-goldLight text-ruina-black font-cinzel text-xs font-bold tracking-widest uppercase rounded transition-all shadow-[0_0_12px_rgba(197,160,89,0.3)]"
                 >
-                  XÁC NHẬN TIẾP ĐÓN
+                  TRANSMIT DISPATCH
                 </button>
                 <span class="text-[11px] text-ruina-muted font-mono">ENCRYPTED TRANSMISSION</span>
               </div>
@@ -1362,14 +1317,89 @@
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
       <div class="flex items-center gap-2 text-ruina-parchment">
         <span class="w-2 h-2 bg-ruina-gold rotate-45 inline-block"></span>
-        <span class="font-bold">THƯ VIỆN LOGISTICS · NGUYỄN BẢO HƯNG</span>
-        <span class="text-ruina-muted text-[11px]">FTU K63</span>
+        <span class="font-bold">LIBRARY OF THE ARCHIVED · NGUYEN BAO HUNG</span>
+        <span class="text-ruina-muted text-[11px]">GPA 3.69 · IELTS 8.0 · FTU K63</span>
       </div>
       <div class="text-[11px] text-ruina-muted text-center sm:text-right">
-        "May you find your book in this place." &copy; 2026 Nguyễn Bảo Hưng.
+        "May you find your book in this place." &copy; 2026 Nguyen Bao Hung.
       </div>
     </div>
   </footer>
+
+  <!-- ========================================== -->
+  <!-- ========================================== -->
+  <!-- 7.5. BACKGROUND AUDIO (YOUTUBE yyDMMFxImrA) -->
+  <!-- ========================================== -->
+  <!-- Persistent Floating Library Music Controller (Ruina Gramophone) -->
+  <aside id="ruina-music-widget" class="fixed bottom-4 right-4 z-40 bg-ruina-surface/95 border-2 border-ruina-gold/50 rounded-xl p-3 shadow-2xl backdrop-blur-md transition-all hover:border-ruina-gold max-w-[300px] sm:max-w-sm w-full" aria-label="Library Audio Player">
+    
+    <!-- Top Controller Bar -->
+    <div class="flex items-center gap-3">
+      <!-- Spinning Gold Vinyl Disc -->
+      <div id="vinyl-disc" class="w-10 h-10 rounded-full border border-ruina-gold/80 bg-ruina-dark flex items-center justify-center relative shadow-[0_0_10px_rgba(197,160,89,0.25)] shrink-0 transition-transform">
+        <div class="w-4 h-4 rounded-full border border-ruina-goldLight bg-ruina-crimson flex items-center justify-center text-[8px] font-cinzel text-ruina-parchment font-bold">
+          BH
+        </div>
+        <div class="absolute inset-0 rounded-full border border-dashed border-ruina-gold/30"></div>
+      </div>
+
+      <!-- Track Info & Animated Equalizer -->
+      <div class="flex flex-col pr-1 overflow-hidden">
+        <div class="flex items-center gap-2">
+          <span class="font-cinzel text-xs font-bold text-ruina-parchment tracking-wide truncate">
+            Library of Ruina
+          </span>
+          <!-- Equalizer Bars -->
+          <div id="eq-visualizer" class="hidden items-end gap-0.5 h-3">
+            <span class="w-1 bg-ruina-gold rounded-full eq-bar-1"></span>
+            <span class="w-1 bg-ruina-goldLight rounded-full eq-bar-2"></span>
+            <span class="w-1 bg-ruina-gold rounded-full eq-bar-3"></span>
+          </div>
+        </div>
+        <span class="font-mono text-[10px] text-ruina-gold/80 truncate">
+          Lobby Theme · OST
+        </span>
+      </div>
+
+      <!-- Controls -->
+      <div class="flex items-center gap-1.5 border-l border-ruina-border pl-2.5 ml-auto">
+        <!-- Play / Pause Button -->
+        <button onclick="toggleAtmosphericAudio()" id="widget-play-btn" class="w-8 h-8 rounded bg-ruina-gold hover:bg-ruina-goldLight text-ruina-black flex items-center justify-center transition-colors shadow-sm text-xs font-bold shrink-0" aria-label="Play or Pause Library Theme">
+          <span id="widget-play-icon">▶</span>
+        </button>
+
+        <!-- Toggle Mini Video Player Drawer -->
+        <!-- Toggle Mini Video Player Drawer (Default: Hidden) -->
+        <button onclick="toggleVideoDrawer()" id="widget-toggle-drawer" class="w-7 h-7 rounded border border-ruina-border hover:border-ruina-gold text-ruina-muted hover:text-ruina-gold flex items-center justify-center transition-colors text-[10px] font-mono shrink-0" title="Show/Hide video screen">
+          📺
+        </button>
+      </div>
+    </div>
+
+    <!-- YouTube Embed Player Container (Hidden by default, can be toggled with 📺) -->
+    <div id="yt-player-drawer" class="hidden-drawer mt-2.5 pt-2 border-t border-ruina-border">
+      <div class="relative w-full rounded overflow-hidden aspect-video bg-black border border-ruina-border">
+        <iframe 
+          id="yt-main-iframe"
+          class="w-full h-full"
+          src="https://www.youtube-nocookie.com/embed/yyDMMFxImrA?enablejsapi=1&version=3&playsinline=1&loop=1&playlist=yyDMMFxImrA"
+          title="Library of Ruina Theme"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <div class="flex items-center justify-between text-[10px] font-mono text-ruina-muted mt-1.5 px-0.5">
+        <span class="text-ruina-gold/80">Ruina OST</span>
+        <button onclick="toggleVideoDrawer(false)" class="text-slate-400 hover:text-ruina-gold text-[10px] font-sans transition-colors cursor-pointer">
+          ✕ Ẩn màn hình
+        </button>
+        <a href="https://www.youtube.com/watch?v=yyDMMFxImrA" target="_blank" rel="noopener noreferrer" class="text-ruina-gold hover:underline flex items-center gap-1">
+          <span>YouTube</span> ↗
+        </a>
+      </div>
+    </div>
+
+  </aside>
 
   <!-- ========================================== -->
   <!-- 8. BOOK INSPECTOR MODAL -->
@@ -1377,9 +1407,8 @@
   <div id="book-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 ruina-modal-backdrop" role="dialog" aria-modal="true">
     <div class="bg-ruina-surface border-2 border-ruina-gold rounded-xl max-w-2xl w-full max-h-[85vh] overflow-y-auto p-6 sm:p-8 space-y-6 relative shadow-2xl">
       
-      <!-- Close button -->
-      <button onclick="closeBookModal()" class="absolute top-4 right-4 text-ruina-muted hover:text-ruina-gold p-1 text-sm font-cinzel border border-ruina-border rounded" aria-label="Đóng">
-        ✕ ĐÓNG
+      <button onclick="closeBookModal()" class="absolute top-4 right-4 text-ruina-muted hover:text-ruina-gold p-1 text-sm font-cinzel border border-ruina-border rounded" aria-label="Close">
+        ✕ CLOSE
       </button>
 
       <div class="space-y-1 pr-12">
@@ -1390,13 +1419,12 @@
 
       <div class="h-px bg-ruina-border"></div>
 
-      <!-- Injected modal content -->
       <div id="modal-book-body" class="space-y-4 text-xs sm:text-sm text-slate-300 leading-relaxed font-light"></div>
 
       <div class="pt-4 border-t border-ruina-border flex items-center justify-between">
         <div id="modal-book-tags" class="flex flex-wrap gap-2 text-xs font-mono text-ruina-gold"></div>
         <button onclick="closeBookModal()" class="px-4 py-2 font-cinzel text-xs font-semibold bg-ruina-dark hover:bg-ruina-border text-ruina-parchment border border-ruina-border rounded transition-colors">
-          HOÀN TẤT ĐỌC
+          DISMISS INSPECTION
         </button>
       </div>
 
@@ -1407,96 +1435,86 @@
   <!-- 9. JAVASCRIPT LOGIC & WEB AUDIO SYNTHESIZER -->
   <!-- ========================================== -->
   <script>
-    // Books Codex Database
+    // Books Codex Database - Complete English
     const booksCodex = {
       winmart: {
-        category: "CUỐN SÁCH KHO VẬN BÁN LẺ · BOOK OF RETAIL STORAGE",
-        title: "Phương pháp Quản lý Kho và Kệ hàng tại Chuỗi Siêu thị Bán lẻ",
-        subtitle: "Đề tài nghiên cứu ứng dụng thực tế · Đặt nền tảng cho công tác Giám sát Kho",
+        category: "PROJECT 01 · WAREHOUSING & RETAIL STORAGE",
+        title: "Storage and Shelf Management Methodologies at Winmart",
+        subtitle: "Conceptualized and engineered the research framework for the Winmart retail chain",
         body: `
-          <h4 class="font-cinzel font-bold text-ruina-gold text-sm mb-1">1. Bối cảnh & Vấn đề nghiên cứu</h4>
+          <h4 class="font-cinzel font-bold text-ruina-gold text-sm mb-1">1. Research Context & Problem Formulation</h4>
           <p class="text-slate-300 mb-3">
-            Hệ thống siêu thị bán lẻ quy mô lớn luân chuyển hàng nghìn mã hàng (SKU) mỗi ngày. Sự phân bổ kệ hàng không khoa học sẽ dẫn tới việc nhân viên picking hàng phải di chuyển qua lại nhiều lần, tăng nguy cơ va chạm và gây hao hụt hàng hóa cận date.
+            The nationwide Winmart retail network orchestrates the movement of thousands of distinct Stock Keeping Units (SKUs) on a continuous daily schedule. Suboptimal shelf positioning (Slotting) incurs severe picker transit redundancies, prolongs order cycle lead times, and elevates shrinkage risks for Fast-Moving Consumer Goods (FMCG).
           </p>
-          <h4 class="font-cinzel font-bold text-ruina-gold text-sm mb-1">2. Đóng góp & Phương pháp thực hiện</h4>
+          <h4 class="font-cinzel font-bold text-ruina-gold text-sm mb-1">2. Methodology & Key Contributions</h4>
           <ul class="list-disc list-inside space-y-1.5 text-slate-300 mb-3">
-            <li><strong>Xây dựng khung phân tích:</strong> Xác định mức độ ưu tiên dựa trên tốc độ quay vòng sản phẩm (Fast vs Slow moving).</li>
-            <li><strong>Slotting Optimization:</strong> Bố trí mặt hàng tiêu thụ nhanh ở vị trí tầm với trung tâm và gần cửa xuất kho; hàng cồng kềnh ở tầng dưới cùng.</li>
-            <li><strong>Nguyên tắc 5S & FIFO:</strong> Xây dựng quy trình sắp đặt rõ ràng giúp bảo quản và đảo hàng nhập trước xuất trước chuẩn xác.</li>
+            <li><strong>Ideation & Framework Architecture:</strong> Formulated dependent variables assessing SKU turnover velocities, packaging dimensions, and restocking cadences.</li>
+            <li><strong>Slotting & ABC Velocity Modeling:</strong> Designated high-frequency items to central ergonomic eye-level tiers near outbound docks; assigned low-velocity inventory to upper vertical storage tiers.</li>
+            <li><strong>5S & FIFO Standardization:</strong> Established disciplined handling procedures to enforce First-In, First-Out integrity, systematically curtailing expiration wastage.</li>
           </ul>
-          <h4 class="font-cinzel font-bold text-ruina-gold text-sm mb-1">3. Giá trị đúc kết</h4>
+          <h4 class="font-cinzel font-bold text-ruina-gold text-sm mb-1">3. Operational Takeaway</h4>
           <p class="text-slate-300">
-            Giúp định hình tư duy thực tế của một Giám sát kho: quản trị không chỉ dựa trên cảm quan mà cần dữ liệu phân loại SKU và quy trình chuẩn hóa.
+            Solidified the practical mindset demanded of a future Warehouse Operations Supervisor: fusing empirical physical layout observation with mathematical SKU profiling to streamline every operational second.
           </p>
         `,
-        tags: ["Slotting Optimization", "Bố trí kệ hàng", "Phân loại ABC", "5S & FIFO"]
-      },
-      portfolio: {
-        category: "SỐ HÓA THƯ VIỆN · BOOK OF RUINA CODEX",
-        title: "Xây Dựng Website Thư Viện Portfolio Phong Cách Library of Ruina",
-        subtitle: "Kiến trúc Front-end độc lập · Đóng gói single-file HTML & Web Audio API",
-        body: `
-          <h4 class="font-cinzel font-bold text-ruina-gold text-sm mb-1">1. Ý tưởng & Triết lý thiết kế</h4>
-          <p class="text-slate-300 mb-3">
-            Tái hiện không gian huyền bí, cổ điển nhưng đậm chất học thuật của tựa game Library of Ruina để tôn vinh sự kết hợp giữa kiến thức chuỗi cung ứng Ngoại thương và kỹ năng số hóa hiện đại.
-          </p>
-          <h4 class="font-cinzel font-bold text-ruina-gold text-sm mb-1">2. Điểm nhấn công nghệ</h4>
-          <ul class="list-disc list-inside space-y-1.5 text-slate-300 mb-3">
-            <li><strong>Phần mở đầu Thư mời (The Invitation):</strong> Đem đến trải nghiệm mở thư độc đáo trước khi bước vào chi tiết hồ sơ năng lực.</li>
-            <li><strong>Tailwind CSS & Google Fonts:</strong> Sử dụng font Cinzel phong cách Gothic La Mã kết hợp Be Vietnam Pro thân thiện tiếng Việt.</li>
-            <li><strong>Web Audio Synthesizer:</strong> Tự sinh âm sắc piano ambient của thư viện bằng code thuần, không phụ thuộc tài nguyên bên ngoài.</li>
-          </ul>
-        `,
-        tags: ["Library of Ruina", "HTML5 Single File", "Tailwind CDN", "Web Audio API"]
+        tags: ["Winmart", "Slotting Optimization", "Shelf Management", "ABC Classification", "5S & FIFO"]
       },
       audiobook: {
-        category: "KHẢO SÁT & BIÊN TẬP · BOOK OF SOUND",
-        title: "Khảo Sát Nhu Cầu Cho Dự Án 'Sách Nói Hàng Tuần'",
-        subtitle: "Khảo sát thị hiếu độc giả trẻ & Lựa chọn danh mục xuất bản",
+        category: "PROJECT 02 · USER SURVEY & EDITORIAL CURATION",
+        title: "Needs Assessment and Title Selection for the 'Weekly Audiobooks' Project",
+        subtitle: "Assessing youth listener behavioral patterns and building a curated audio release catalog",
         body: `
-          <h4 class="font-cinzel font-bold text-ruina-gold text-sm mb-1">Nội dung thực hiện</h4>
-          <p class="text-slate-300 mb-2">
-            Thu thập phản hồi từ hơn 200 sinh viên về thói quen nghe sách trên các nền tảng số; xử lý số liệu khảo sát và lọc ra các chủ đề được quan tâm cao nhất.
+          <h4 class="font-cinzel font-bold text-ruina-gold text-sm mb-1">1. Project Objective</h4>
+          <p class="text-slate-300 mb-3">
+            Investigating modern auditory knowledge consumption patterns among university students and young professionals, followed by selecting the most substantive and impactful literary titles for periodic production.
           </p>
-          <p class="text-slate-300">
-            Tuyển chọn danh mục sách trọng tâm về phát triển kỹ năng tư duy, kinh tế và logistics để lên lịch phát sóng định kỳ.
-          </p>
+          <h4 class="font-cinzel font-bold text-ruina-gold text-sm mb-1">2. Methodology & Execution</h4>
+          <ul class="list-disc list-inside space-y-1.5 text-slate-300 mb-3">
+            <li><strong>User Needs Assessment:</strong> Engineered survey questionnaires probing peak auditory listening windows, preferred genre categories, and optimal episode duration thresholds.</li>
+            <li><strong>Data Cleaning & Analytics:</strong> Cleaned raw qualitative/quantitative feedback datasets using Microsoft Excel and Google Sheets to extract empirical listener cohorts.</li>
+            <li><strong>Curatorial Selection:</strong> Evaluated and recommended foundational works in economic theory, intellectual self-mastery, and supply chain frameworks for serialized audio production.</li>
+          </ul>
         `,
-        tags: ["Khảo sát thính giả", "Xử lý dữ liệu", "Biên tập nội dung"]
+        tags: ["Needs Assessment", "Title Selection", "Weekly Audiobooks", "Data Analytics", "Editorial Curation"]
       },
       freight_history: {
-        category: "HỌC THUẬT & LỊCH SỬ · BOOK OF FREIGHT CHRONICLES",
-        title: "Lịch Sử Phát Triển Ngành Vận Tải Thế Giới",
-        subtitle: "Nghiên cứu quá trình tiến hóa từ hàng hải thô sơ đến vận tải đa phương thức",
+        category: "PROJECT 03 · SCHOLARSHIP & FREIGHT HISTORY",
+        title: "The History of Global Freight Development",
+        subtitle: "Ideation and content drafting tracing global transportation milestones",
         body: `
-          <h4 class="font-cinzel font-bold text-ruina-gold text-sm mb-1">Tổng quan chuyên đề</h4>
-          <p class="text-slate-300 mb-2">
-            Hệ thống hóa các bước ngoặt vĩ đại của logistics: cuộc cách mạng Container hóa của Malcom McLean, sự phát triển của cảng nước sâu và mạng lưới logistics số toàn cầu.
+          <h4 class="font-cinzel font-bold text-ruina-gold text-sm mb-1">1. Monograph Overview</h4>
+          <p class="text-slate-300 mb-3">
+            A comprehensive historiographical synthesis charting the monumental evolutions of international freight transport: from primitive coastal trade routes and steam propulsion to Malcom McLean's transformative containerization revolution and modern intermodal corridors.
           </p>
-          <p class="text-slate-300">
-            Giúp củng cố nền tảng kiến thức thương mại quốc tế phục vụ chuyên ngành Chuỗi cung ứng tại FTU.
-          </p>
+          <h4 class="font-cinzel font-bold text-ruina-gold text-sm mb-1">2. Analytical Framing & Content Drafting</h4>
+          <ul class="list-disc list-inside space-y-1.5 text-slate-300 mb-3">
+            <li><strong>Conceptual Chronology:</strong> Divided global transportation milestones into eras corresponding to major industrial revolutions and trade liberalization waves.</li>
+            <li><strong>Archival & Data Synthesis:</strong> Researched international maritime logs, port throughput statistics, and international logistics standardization records.</li>
+            <li><strong>In-depth Exposition:</strong> Articulated the fundamental catalyst role logistics plays in global GDP expansion and derived strategic implications for Vietnam's digital supply chain development.</li>
+          </ul>
         `,
-        tags: ["Containerization", "Vận tải biển", "Lịch sử Logistics", "FTU"]
+        tags: ["Freight History", "Containerization", "Maritime Logistics", "Content Drafting", "FTU Supply Chain Management"]
       },
       ship_crew: {
-        category: "THỰC ĐỊA HÀNG HẢI · BOOK OF SEAFARERS",
-        title: "5 Ngày Làm Thủy Thủ Trên Tàu Vận Tải",
-        subtitle: "Nhật ký quan sát thực địa chu trình xếp dỡ và an toàn hàng hải",
+        category: "PROJECT 04 · MARITIME FIELDWORK",
+        title: "5 Days as a Seafarer Aboard a Cargo Ship",
+        subtitle: "Fieldwork documentation and operational observation aboard an active coastal vessel",
         body: `
-          <h4 class="font-cinzel font-bold text-ruina-gold text-sm mb-1">Nội dung thực địa</h4>
-          <p class="text-slate-300 mb-2">
-            Ghi chép và hệ thống hóa thực tế quy trình làm việc trên tàu hàng: công tác bốc dỡ container tại bến, kiểm tra dây chằng buộc và an toàn hàng hải khi gặp thời tiết xấu.
+          <h4 class="font-cinzel font-bold text-ruina-gold text-sm mb-1">1. Fieldwork Setting</h4>
+          <p class="text-slate-300 mb-3">
+            An immersive voyage aboard a coastal container freighter provided an unfiltered look at frontline freight dynamics that theoretical textbooks cannot convey.
           </p>
-          <p class="text-slate-300">
-            Đúc kết tầm quan trọng của tính kỷ luật và sự cẩn trọng đối với một người quản lý vận hành kho bãi và vận tải.
-          </p>
+          <h4 class="font-cinzel font-bold text-ruina-gold text-sm mb-1">2. Operational Insights & Documentation</h4>
+          <ul class="list-disc list-inside space-y-1.5 text-slate-300 mb-3">
+            <li><strong>Port Stevedoring Observations:</strong> Monitored berthing maneuvers, gantry crane container stowage sequences, and custom seal inspections.</li>
+            <li><strong>Cargo Lashing Protocols:</strong> Examined technical twist-lock and diagonal lashing procedures safeguarding heavy intermodal units against vessel listing during adverse weather.</li>
+            <li><strong>Feature Drafting:</strong> Translated technical observations and crew testimonials into an evocative expository brief championing maritime safety discipline and operational fortitude.</li>
+          </ul>
         `,
-        tags: ["Thực địa cảng", "Vận tải biển", "Kỷ luật an toàn", "Bốc dỡ container"]
+        tags: ["Maritime Fieldwork", "Cargo Vessel", "5 Days as a Seafarer", "Port Stevedoring", "Safety Protocols"]
       }
     };
 
-    // Modal functions
     function inspectBook(key) {
       const data = booksCodex[key];
       if (!data) return;
@@ -1533,7 +1551,6 @@
       document.body.style.overflow = '';
     }
 
-    // Close on backdrop click & ESC
     document.getElementById('book-modal').addEventListener('click', function(e) {
       if (e.target === this) closeBookModal();
     });
@@ -1541,14 +1558,76 @@
       if (e.key === 'Escape') closeBookModal();
     });
 
-    // Enter library smooth action from intro
+    // ==========================================
+    // LIBRARY OF RUINA: INVITATION ACCEPTANCE & TRANSITION
+    // ==========================================
     function enterTheLibrary(e) {
-      e.preventDefault();
-      const target = document.getElementById('patron-librarian');
-      target.scrollIntoView({ behavior: 'smooth' });
+      if (e) e.preventDefault();
+      acceptInvitationAndEnter();
     }
 
-    // Filter books by category
+    function acceptInvitationAndEnter(silent = false) {
+      const overlay = document.getElementById('invitation-screen');
+      const seal = document.getElementById('invitation-seal');
+      const btn = document.getElementById('btn-accept-invitation');
+      
+      if (seal) {
+        seal.classList.add('scale-125', 'ring-4', 'ring-ruina-goldLight');
+      }
+      if (btn) {
+        btn.innerHTML = '<span>✦ INVITATION ACCEPTED · ENTERING THE ARCHIVE... ✦</span>';
+        btn.classList.add('bg-ruina-gold', 'text-ruina-black', 'border-white');
+      }
+      
+      // Auto-start ambient library OST if not muted and not already playing
+      if (!silent && !isAudioPlaying) {
+        try {
+          toggleAtmosphericAudio();
+        } catch (err) {}
+      }
+
+      // Cinematic dissolve transition from the parchment into the main screen
+      setTimeout(() => {
+        if (overlay) {
+          overlay.classList.add('opacity-0', 'scale-105', 'pointer-events-none');
+          setTimeout(() => {
+            overlay.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+            const target = document.getElementById('patron-librarian');
+            if (target) {
+              target.scrollIntoView({ behavior: 'smooth' });
+            }
+          }, 600);
+        }
+      }, 400);
+    }
+
+    // Re-open invitation from navbar if user wants to review the manuscript
+    function openInvitationParchment() {
+      const overlay = document.getElementById('invitation-screen');
+      const closeBtn = document.getElementById('btn-close-invitation');
+      if (overlay) {
+        overlay.classList.remove('hidden', 'opacity-0', 'scale-105', 'pointer-events-none');
+        overlay.classList.add('opacity-100', 'scale-100');
+        document.body.classList.add('overflow-hidden');
+      }
+      if (closeBtn) {
+        closeBtn.classList.remove('hidden');
+      }
+    }
+
+    // Dismiss re-opened invitation
+    function closeInvitationParchment() {
+      const overlay = document.getElementById('invitation-screen');
+      if (overlay) {
+        overlay.classList.add('opacity-0', 'scale-105', 'pointer-events-none');
+        setTimeout(() => {
+          overlay.classList.add('hidden');
+          document.body.classList.remove('overflow-hidden');
+        }, 500);
+      }
+    }
+
     function filterBooks(category) {
       document.querySelectorAll('.book-tab').forEach(btn => {
         btn.classList.remove('bg-ruina-gold', 'text-ruina-black', 'font-bold');
@@ -1570,21 +1649,19 @@
       });
     }
 
-    // Quick Copy Email
     function copyEmail() {
       const email = 'k63.2412150133@ftu.edu.vn';
       navigator.clipboard.writeText(email).then(() => {
         const status = document.getElementById('copy-status');
-        status.innerText = 'Đã sao chép!';
+        status.innerText = 'Copied!';
         status.classList.add('text-ruina-gold');
         setTimeout(() => {
-          status.innerText = 'Sao chép';
+          status.innerText = 'Copy';
           status.classList.remove('text-ruina-gold');
         }, 2000);
       });
     }
 
-    // Mobile nav toggle
     const toggleBtn = document.getElementById('mobile-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
     toggleBtn.addEventListener('click', () => {
@@ -1594,62 +1671,153 @@
       link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
     });
 
-    // Web Audio Synthesizer for Ambient Ruina Tone
-    let audioCtx = null;
-    let isPlayingAudio = false;
-    let ambientOscillators = [];
+    // ==========================================
+    // YOUTUBE AUDIO INTEGRATION: THEME yyDMMFxImrA
+    // ==========================================
+    let ytPlayer = null;
+    let ytReady = false;
+    let isAudioPlaying = false;
 
-    function toggleAtmosphericAudio() {
-      const label = document.getElementById('audio-label');
-      const icon = document.getElementById('audio-icon');
-
-      if (!isPlayingAudio) {
-        try {
-          if (!audioCtx) {
-            audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-          }
-          if (audioCtx.state === 'suspended') {
-            audioCtx.resume();
-          }
-
-          // Gentle ambient chord (D minor - dark Library atmosphere: D3, F3, A3, E4)
-          const freqs = [146.83, 174.61, 220.00, 329.63];
-          ambientOscillators = freqs.map((f, i) => {
-            const osc = audioCtx.createOscillator();
-            const gain = audioCtx.createGain();
-            osc.type = i % 2 === 0 ? 'sine' : 'triangle';
-            osc.frequency.setValueAtTime(f, audioCtx.currentTime);
-            
-            // Soft atmospheric volume
-            gain.gain.setValueAtTime(0.012, audioCtx.currentTime);
-            osc.connect(gain);
-            gain.connect(audioCtx.destination);
-            osc.start();
-            return { osc, gain };
-          });
-
-          isPlayingAudio = true;
-          label.innerText = 'Đang phát';
-          label.classList.add('text-ruina-gold');
-          icon.innerText = '◼';
-        } catch (e) {
-          console.warn('Audio API unavailable', e);
+    // Expand or collapse player drawer (Default is hidden)
+    function toggleVideoDrawer(forceState) {
+      const drawer = document.getElementById('yt-player-drawer');
+      const btn = document.getElementById('widget-toggle-drawer');
+      if (!drawer) return;
+      const isCurrentlyOpen = !drawer.classList.contains('hidden-drawer');
+      const shouldOpen = forceState !== undefined ? forceState : !isCurrentlyOpen;
+      if (shouldOpen) {
+        drawer.classList.remove('hidden-drawer');
+        if (btn) {
+          btn.classList.add('border-ruina-gold', 'text-ruina-gold', 'bg-ruina-gold/20');
+          btn.title = 'Ẩn màn hình video';
         }
       } else {
-        // Stop audio
-        ambientOscillators.forEach(item => {
-          item.gain.gain.linearRampToValueAtTime(0.0001, audioCtx.currentTime + 0.5);
-          setTimeout(() => item.osc.stop(), 500);
-        });
-        ambientOscillators = [];
-        isPlayingAudio = false;
-        label.innerText = 'Âm thanh';
-        label.classList.remove('text-ruina-gold');
-        icon.innerText = '♫';
+        drawer.classList.add('hidden-drawer');
+        if (btn) {
+          btn.classList.remove('border-ruina-gold', 'text-ruina-gold', 'bg-ruina-gold/20');
+          btn.title = 'Hiện màn hình video';
+        }
       }
     }
 
-    // Reception form submit handler
+    // Send direct postMessage command to YouTube iframe
+    function sendYTIframeCommand(func, args) {
+      const iframe = document.getElementById('yt-main-iframe');
+      if (iframe && iframe.contentWindow) {
+        iframe.contentWindow.postMessage(JSON.stringify({
+          event: 'command',
+          func: func,
+          args: args || []
+        }), '*');
+      }
+    }
+
+    // YouTube IFrame API initialization callback
+    window.onYouTubeIframeAPIReady = function() {
+      try {
+        ytPlayer = new YT.Player('yt-main-iframe', {
+          events: {
+            onReady: function(event) {
+              ytReady = true;
+              try {
+                event.target.setVolume(80);
+              } catch (e) {}
+            },
+            onStateChange: function(event) {
+              if (event.data === YT.PlayerState.PLAYING) {
+                setAudioUIState(true);
+              } else if (event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED) {
+                setAudioUIState(false);
+              }
+            },
+            onError: function(err) {
+              console.warn('YouTube Player notice:', err);
+            }
+          }
+        });
+      } catch (err) {
+        console.warn('YouTube API init error:', err);
+      }
+    };
+
+    // Listen to iframe events via postMessage
+    window.addEventListener('message', function(e) {
+      try {
+        const data = typeof e.data === 'string' ? JSON.parse(e.data) : e.data;
+        if (data && data.event === 'onStateChange') {
+          if (data.info === 1) {
+            setAudioUIState(true);
+          } else if (data.info === 2 || data.info === 0) {
+            setAudioUIState(false);
+          }
+        }
+      } catch (err) {}
+    });
+
+    // Update UI elements across Intro button & Floating Gramophone widget
+    function setAudioUIState(playing) {
+      isAudioPlaying = playing;
+      
+      // 1. Intro Button
+      const introLabel = document.getElementById('audio-label');
+      const introIcon = document.getElementById('audio-icon');
+      if (introLabel && introIcon) {
+        if (playing) {
+          introLabel.innerText = 'Pause Theme';
+          introIcon.innerText = '⏸';
+        } else {
+          introLabel.innerText = 'Ruina Theme';
+          introIcon.innerText = '▶';
+        }
+      }
+
+      // 2. Floating Gramophone Widget
+      const widgetPlayIcon = document.getElementById('widget-play-icon');
+      const vinylDisc = document.getElementById('vinyl-disc');
+      const eqVisualizer = document.getElementById('eq-visualizer');
+
+      if (widgetPlayIcon) {
+        widgetPlayIcon.innerText = playing ? '⏸' : '▶';
+      }
+      if (vinylDisc) {
+        if (playing) {
+          vinylDisc.classList.add('vinyl-spinning');
+        } else {
+          vinylDisc.classList.remove('vinyl-spinning');
+        }
+      }
+      if (eqVisualizer) {
+        if (playing) {
+          eqVisualizer.classList.remove('hidden');
+          eqVisualizer.classList.add('flex');
+        } else {
+          eqVisualizer.classList.remove('flex');
+          eqVisualizer.classList.add('hidden');
+        }
+      }
+    }
+
+    // Toggle Play / Pause for Theme (Leaves video screen hidden)
+    function toggleAtmosphericAudio() {
+      if (isAudioPlaying) {
+        if (ytPlayer && typeof ytPlayer.pauseVideo === 'function') {
+          try {
+            ytPlayer.pauseVideo();
+          } catch (e) {}
+        }
+        sendYTIframeCommand('pauseVideo');
+        setAudioUIState(false);
+      } else {
+        if (ytPlayer && typeof ytPlayer.playVideo === 'function') {
+          try {
+            ytPlayer.playVideo();
+          } catch (e) {}
+        }
+        sendYTIframeCommand('playVideo');
+        setAudioUIState(true);
+      }
+    }
+
     function submitReception(e) {
       e.preventDefault();
       const name = document.getElementById('guest-name').value.trim();
@@ -1659,18 +1827,29 @@
       const feedback = document.getElementById('reception-feedback');
 
       btn.disabled = true;
-      btn.innerText = 'ĐANG GỬI THƯ...';
+      btn.innerText = 'TRANSMITTING DISPATCH...';
 
       setTimeout(() => {
         btn.disabled = false;
-        btn.innerText = 'XÁC NHẬN TIẾP ĐÓN';
+        btn.innerText = 'TRANSMIT DISPATCH';
         feedback.className = 'p-3 rounded text-xs font-mono bg-ruina-surface border border-ruina-gold text-ruina-gold block';
         feedback.innerHTML = `
-          <strong>[TIẾP ĐÓN THÀNH CÔNG]</strong> Cảm ơn quý khách <strong>${name}</strong>. Bức thư về chủ đề <em>"${subject}"</em> đã được chuyển tới Thủ thư Nguyễn Bảo Hưng. Chúng tôi sẽ gửi hồi đáp tới hòm thư <strong>${email}</strong>.
+          <strong>[DISPATCH CONFIRMED]</strong> Thank you, esteemed guest <strong>${name}</strong>. Your transmission regarding <em>"${subject}"</em> has been recorded at the Reception Desk. An acknowledgment will be sent to <strong>${email}</strong> shortly.
         `;
         document.getElementById('reception-form').reset();
       }, 700);
     }
+
+    // Restore custom portrait if previously saved in browser
+    document.addEventListener('DOMContentLoaded', () => {
+      const saved = localStorage.getItem('ruina_patron_portrait');
+      if (saved) {
+        const p1 = document.getElementById('patron-portrait-img');
+        if (p1) p1.src = saved;
+        const p2 = document.getElementById('about-portrait-img');
+        if (p2) p2.src = saved;
+      }
+    });
   </script>
 </body>
 </html>

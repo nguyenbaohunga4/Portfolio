@@ -1,0 +1,207 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 520" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="bgGlow" cx="50%" cy="35%" r="75%">
+      <stop offset="0%" stop-color="#222834" />
+      <stop offset="45%" stop-color="#141822" />
+      <stop offset="100%" stop-color="#0a0c10" />
+    </radialGradient>
+    
+    <!-- Warm Gold Ruina Lighting -->
+    <radialGradient id="goldAura" cx="50%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#c5a059" stop-opacity="0.25" />
+      <stop offset="60%" stop-color="#c5a059" stop-opacity="0.05" />
+      <stop offset="100%" stop-color="#c5a059" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Skin Tones -->
+    <linearGradient id="skin" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fff5eb" />
+      <stop offset="50%" stop-color="#f8dfc8" />
+      <stop offset="100%" stop-color="#eac8ac" />
+    </linearGradient>
+    <linearGradient id="skinShadow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f2cfb2" />
+      <stop offset="100%" stop-color="#dbae8c" />
+    </linearGradient>
+
+    <!-- Hair Gradient -->
+    <linearGradient id="hairBase" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2d323b" />
+      <stop offset="40%" stop-color="#181a20" />
+      <stop offset="100%" stop-color="#0b0c0e" />
+    </linearGradient>
+    <linearGradient id="hairHighlight" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#181a20" stop-opacity="0" />
+      <stop offset="50%" stop-color="#4a5260" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#181a20" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Shirt Gradients -->
+    <linearGradient id="shirtBase" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="60%" stop-color="#f1f4f8" />
+      <stop offset="100%" stop-color="#dbe1eb" />
+    </linearGradient>
+    <linearGradient id="collarShadow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c2ccd9" />
+      <stop offset="100%" stop-color="#a8b5c6" />
+    </linearGradient>
+
+    <!-- Gold Border Gradient -->
+    <linearGradient id="goldBorder" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffe6a3" />
+      <stop offset="40%" stop-color="#c5a059" />
+      <stop offset="100%" stop-color="#7d6028" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="400" height="520" fill="url(#bgGlow)" />
+  <rect width="400" height="520" fill="url(#goldAura)" />
+
+  <!-- Subtle Atmospheric Library Texture -->
+  <g opacity="0.04" stroke="#c5a059" stroke-width="1">
+    <line x1="40" y1="0" x2="40" y2="520" />
+    <line x1="80" y1="0" x2="80" y2="520" />
+    <line x1="320" y1="0" x2="320" y2="520" />
+    <line x1="360" y1="0" x2="360" y2="520" />
+  </g>
+
+  <!-- BODY: Torso & White Uniform Shirt -->
+  <g id="torso">
+    <!-- Base Torso Silhouette -->
+    <path d="M 40 520 C 50 420 85 365 140 350 L 200 355 L 260 350 C 315 365 350 420 360 520 Z" fill="url(#shirtBase)" />
+    
+    <!-- Chest / Placket line -->
+    <path d="M 198 380 L 198 520" stroke="#d5dbe5" stroke-width="2.5" />
+    <circle cx="198" cy="430" r="3.5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+    <circle cx="198" cy="485" r="3.5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+
+    <!-- Shoulders & Arm Creases -->
+    <path d="M 105 385 C 90 425 78 470 70 520" stroke="#cbd5e1" stroke-width="2" fill="none" opacity="0.6" />
+    <path d="M 295 385 C 310 425 322 470 330 520" stroke="#cbd5e1" stroke-width="2" fill="none" opacity="0.6" />
+
+    <!-- Pocket on Left Chest (Viewer's Right) -->
+    <path d="M 255 435 L 295 435 L 295 480 C 295 485 275 492 275 492 C 275 492 255 485 255 480 Z" fill="#ffffff" stroke="#cdd5e0" stroke-width="1.5" />
+    <!-- University Crest Emblem (Foreign Trade University Blue badge) -->
+    <rect x="263" y="445" width="24" height="18" rx="3" fill="#1b4b9b" stroke="#f1f5f9" stroke-width="1.2" />
+    <circle cx="275" cy="454" r="5" fill="#ffffff" opacity="0.85" />
+    <path d="M 271 454 L 275 450 L 279 454 L 275 457 Z" fill="#1b4b9b" />
+  </g>
+
+  <!-- NECK & COLLAR -->
+  <g id="neck-collar">
+    <!-- Neck shadow behind collar -->
+    <path d="M 165 290 L 165 370 Q 200 380 235 370 L 235 290 Z" fill="url(#skinShadow)" />
+    <!-- Neck core -->
+    <path d="M 168 290 L 168 360 Q 200 372 232 360 L 232 290 Z" fill="url(#skin)" />
+    
+    <!-- Collar back band -->
+    <path d="M 160 345 Q 200 365 240 345 L 240 355 Q 200 375 160 355 Z" fill="url(#collarShadow)" />
+
+    <!-- Left Collar Wing (Viewer's Left) -->
+    <polygon points="160,345 140,390 190,378 185,348" fill="#ffffff" stroke="#cdd5e0" stroke-width="1.5" />
+    <polygon points="160,345 140,390 185,378" fill="url(#shirtBase)" />
+
+    <!-- Right Collar Wing (Viewer's Right) -->
+    <polygon points="240,345 260,390 210,378 215,348" fill="#ffffff" stroke="#cdd5e0" stroke-width="1.5" />
+    <polygon points="240,345 260,390 215,378" fill="url(#shirtBase)" />
+
+    <!-- Collar V-junction -->
+    <polygon points="186,358 200,380 214,358 200,350" fill="url(#skinShadow)" />
+  </g>
+
+  <!-- HEAD & FACE -->
+  <g id="head">
+    <!-- Jaw & Face Outline -->
+    <path d="M 135 190 C 135 120 265 120 265 190 C 265 245 250 300 200 318 C 150 300 135 245 135 190 Z" fill="url(#skin)" />
+
+    <!-- Ears -->
+    <path d="M 136 200 C 124 205 122 235 137 245 Z" fill="url(#skinShadow)" />
+    <path d="M 264 200 C 276 205 278 235 263 245 Z" fill="url(#skinShadow)" />
+
+    <!-- Subtle Cheek & Jaw Contours -->
+    <path d="M 148 245 C 158 280 180 305 200 312 C 220 305 242 280 252 245" fill="none" stroke="#e8be9e" stroke-width="2" opacity="0.35" />
+
+    <!-- EYES -->
+    <!-- Left Eye (Viewer's Left) -->
+    <g id="left-eye">
+      <ellipse cx="172" cy="208" rx="13" ry="8" fill="#ffffff" />
+      <ellipse cx="172" cy="208" rx="8" ry="7.5" fill="#181a20" />
+      <circle cx="170" cy="205" r="3" fill="#ffffff" />
+      <circle cx="174" cy="209" r="1.5" fill="#94a3b8" />
+      <!-- Upper eyelid lash line -->
+      <path d="M 158 206 Q 172 199 186 205" stroke="#111317" stroke-width="2.5" stroke-linecap="round" fill="none" />
+      <!-- Lower eyelid line -->
+      <path d="M 162 214 Q 172 217 183 213" stroke="#d4a37f" stroke-width="1.2" fill="none" />
+      <!-- Eyebrow -->
+      <path d="M 155 190 Q 170 182 188 188" stroke="#1c1f26" stroke-width="4" stroke-linecap="round" fill="none" />
+    </g>
+
+    <!-- Right Eye (Viewer's Right) -->
+    <g id="right-eye">
+      <ellipse cx="228" cy="208" rx="13" ry="8" fill="#ffffff" />
+      <ellipse cx="228" cy="208" rx="8" ry="7.5" fill="#181a20" />
+      <circle cx="226" cy="205" r="3" fill="#ffffff" />
+      <circle cx="230" cy="209" r="1.5" fill="#94a3b8" />
+      <!-- Upper eyelid lash line -->
+      <path d="M 214 205 Q 228 199 242 206" stroke="#111317" stroke-width="2.5" stroke-linecap="round" fill="none" />
+      <!-- Lower eyelid line -->
+      <path d="M 217 213 Q 228 217 238 214" stroke="#d4a37f" stroke-width="1.2" fill="none" />
+      <!-- Eyebrow -->
+      <path d="M 212 188 Q 230 182 245 190" stroke="#1c1f26" stroke-width="4" stroke-linecap="round" fill="none" />
+    </g>
+
+    <!-- NOSE -->
+    <g id="nose">
+      <path d="M 200 200 L 198 242 L 203 242" stroke="#d8a783" stroke-width="2" stroke-linecap="round" fill="none" />
+      <ellipse cx="193" cy="244" rx="3" ry="1.5" fill="#c4906c" />
+      <ellipse cx="207" cy="244" rx="3" ry="1.5" fill="#c4906c" />
+      <path d="M 191 243 Q 200 248 209 243" stroke="#be8761" stroke-width="1.5" fill="none" />
+    </g>
+
+    <!-- MOUTH -->
+    <g id="mouth">
+      <!-- Upper lip shadow -->
+      <path d="M 183 270 Q 200 266 217 270" stroke="#be6d6d" stroke-width="2" stroke-linecap="round" fill="none" />
+      <!-- Lip volume -->
+      <path d="M 184 270 Q 200 273 216 270 Q 200 280 184 270 Z" fill="#cf7f7f" opacity="0.7" />
+      <!-- Subtle chin crease -->
+      <path d="M 193 293 Q 200 296 207 293" stroke="#d4a37f" stroke-width="1.5" fill="none" />
+    </g>
+  </g>
+
+  <!-- HAIR (Styled modern haircut parted slightly left) -->
+  <g id="hair">
+    <!-- Base Hair Mass -->
+    <path d="M 125 185 C 115 130 135 70 200 65 C 265 70 285 130 275 185 C 275 160 260 140 245 135 C 220 125 185 125 155 140 C 138 148 128 165 125 185 Z" fill="url(#hairBase)" />
+    
+    <!-- Hair Volume & Bangs layered towards right -->
+    <path d="M 130 150 C 145 95 210 80 255 105 C 240 120 215 135 185 138 C 155 140 140 148 130 150 Z" fill="#1a1c22" />
+    
+    <!-- Forehead swoops & part -->
+    <path d="M 150 120 Q 185 110 220 130 Q 185 122 150 120 Z" fill="#323742" opacity="0.6" />
+    <path d="M 175 105 Q 215 95 250 125 Q 215 112 175 105 Z" fill="#3a414e" opacity="0.4" />
+    
+    <!-- Sideburns -->
+    <polygon points="135,180 132,215 138,210 138,180" fill="#181a20" />
+    <polygon points="265,180 268,215 262,210 262,180" fill="#181a20" />
+  </g>
+
+  <!-- Ruina Golden Frame Filigree -->
+  <rect x="8" y="8" width="384" height="504" rx="8" fill="none" stroke="url(#goldBorder)" stroke-width="2" />
+  <rect x="14" y="14" width="372" height="492" rx="5" fill="none" stroke="#c5a059" stroke-width="1" stroke-dasharray="8 6" opacity="0.4" />
+
+  <!-- Corner Filigree Diamonds -->
+  <polygon points="20,12 24,16 20,20 16,16" fill="#c5a059" />
+  <polygon points="380,12 384,16 380,20 376,16" fill="#c5a059" />
+  <polygon points="20,500 24,504 20,508 16,504" fill="#c5a059" />
+  <polygon points="380,500 384,504 380,508 376,504" fill="#c5a059" />
+
+  <!-- Bottom Name Banner -->
+  <rect x="70" y="488" width="260" height="22" rx="3" fill="#0d0f14" stroke="#c5a059" stroke-width="1" />
+  <text x="200" y="503" font-family="'Cinzel', serif" font-size="11" font-weight="bold" fill="#f8eed1" text-anchor="middle" letter-spacing="2">
+    NGUYEN BAO HUNG
+  </text>
+</svg>
